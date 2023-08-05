@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Head from 'next/head';
-import TutorialModal from '@/components/corretor/TutorialModal';
+import TutorialModal from '@/components/modal/TutorialModal';
 
 const Corretor = () => {
     // Estado para controlar se o modal de tutorial está aberto
@@ -36,25 +36,25 @@ const Corretor = () => {
     };
 
     return (
-        <div className="container mx-auto p-4 bg-gray-800 rounded-md border border-white/20">
+        <div className="container mx-auto p-4 bg-gray-800 rounded-md border border-white/20 ">
             <Head>
                 <title>Corretor de Textos - ENEM</title>
                 <meta name="description" content="Corretor de textos para o ENEM." />
             </Head>
             <h1 className="text-2xl font-bold mb-4 text-white">Corretor de Textos - ENEM</h1>
             <div className="mb-4">
-                <label htmlFor="inputText" className="block mb-2 text-white">
+                <label htmlFor="inputText" className=" block mb-2 text-white">
                     Insira o texto para correção:
                 </label>
                 <textarea
                     id="inputText"
-                    className="w-full h-40 p-2 bg-gray-700 border border-gray-500 rounded text-white"
+                    className="w-full h-40 p-2 bg-gray-700 border outline-none focus-visible:ring-1 focus:ring-blue-500 transition-all border-gray-500 rounded text-white"
                     value={'' /* Coloque o valor do estado inputText aqui */}
-                    
+
                 ></textarea>
             </div>
             <button
-                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
+                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 outline-none focus-visible:ring-1 focus:ring-blue-500 transition-all"
                 onClick={handleCorrection}
             >
                 Corrigir
@@ -65,7 +65,7 @@ const Corretor = () => {
                 </label>
                 <textarea
                     id="correctedText"
-                    className="w-full h-40 p-2 bg-gray-700 border border-gray-500 rounded text-white"
+                    className="w-full h-40 p-2 bg-gray-700 border outline-none focus-visible:ring-1 focus:ring-blue-500 transition-all border-gray-500 rounded text-white"
                     value={'' /* Coloque o valor do estado correctedText aqui */}
                     readOnly
                 ></textarea>
