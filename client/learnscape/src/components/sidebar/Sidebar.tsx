@@ -61,13 +61,20 @@ const Sidebar: React.FC<SidebarProps> = () => {
                     />
                     <h1 className="text-lg font-semibold">Usuário</h1>
                     <div className="flex flex-col mt-4">
+
+                        <Link href="/" passHref className='mb-2 py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded'>
+                            
+                                <FaPen className="inline-block mr-2 fill-red-500" />
+                                 Pagina Inicial
+                         </Link>
+
                         <Link href="/learning" passHref className='mb-2 py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded'>
                             
                                 <FaRegLightbulb className="inline-block mr-2 fill-red-500" />
                                 Learning
                             
                         </Link>
-                        <Link href="/" passHref className='mb-2 py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded'>
+                        <Link href="/dashboardquiz" passHref className='mb-2 py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded'>
                             
                                 <FaClipboardList className="inline-block mr-2 fill-red-500" />
                                 Quiz
@@ -78,7 +85,9 @@ const Sidebar: React.FC<SidebarProps> = () => {
                                 <FaPen className="inline-block mr-2 fill-red-500" />
                                 Essay
                             
-                        </Link>
+                        </Link>                  
+
+                        
                     </div>
                 </div>
             </div>

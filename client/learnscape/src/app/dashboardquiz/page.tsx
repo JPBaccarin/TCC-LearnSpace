@@ -39,11 +39,10 @@ const DashboardPage = () => {
                         <ExerciseSelectionCard
                             exerciseType={exerciseType}
                             exerciseDifficulty={exerciseDifficulty}
-                            handleExerciseSelection={handleExerciseSelection}
-                        />
+                            handleExerciseSelection={handleExerciseSelection} exerciseQuestionCount={0}                        />
 
 
-                        <LastQuizCard />
+                        <LastQuizCard score={0} topic={''} date={''} />
                     </div>
                 </div>
             </div>
