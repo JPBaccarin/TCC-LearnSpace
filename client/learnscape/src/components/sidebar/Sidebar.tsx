@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FaBars, FaRegLightbulb, FaClipboardList, FaPen } from 'react-icons/fa';
+import { FaBars, FaRegLightbulb, FaClipboardList, FaPen, FaPenSquare, FaMicrophoneAlt } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
 
 interface SidebarProps {
@@ -18,20 +18,20 @@ const Sidebar: React.FC<SidebarProps> = () => {
 
     useEffect(() => {
         const handleOutsideClick = (e: MouseEvent) => {
-          const sidebar = document.getElementById('sidebar');
-          const toggleButton = document.getElementById('toggle-button');
-      
-          if (sidebar && !sidebar.contains(e.target as Node) && toggleButton && !toggleButton.contains(e.target as Node)) {
-            setIsOpen(false);
-          }
+            const sidebar = document.getElementById('sidebar');
+            const toggleButton = document.getElementById('toggle-button');
+
+            if (sidebar && !sidebar.contains(e.target as Node) && toggleButton && !toggleButton.contains(e.target as Node)) {
+                setIsOpen(false);
+            }
         };
-      
+
         document.addEventListener('click', handleOutsideClick);
-      
+
         return () => {
-          document.removeEventListener('click', handleOutsideClick);
+            document.removeEventListener('click', handleOutsideClick);
         };
-      }, []);
+    }, []);
 
     return (
         <div>
@@ -63,31 +63,37 @@ const Sidebar: React.FC<SidebarProps> = () => {
                     <div className="flex flex-col mt-4">
 
                         <Link href="/" passHref className='mb-2 py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded'>
-                            
-                                <FaPen className="inline-block mr-2 fill-red-500" />
-                                 Pagina Inicial
-                         </Link>
+
+                            <FaPen className="inline-block mr-2 fill-red-500" />
+                            Pagina Inicial
+                        </Link>
 
                         <Link href="/learning" passHref className='mb-2 py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded'>
-                            
-                                <FaRegLightbulb className="inline-block mr-2 fill-red-500" />
-                                Learning
-                            
+
+                            <FaRegLightbulb className="inline-block mr-2 fill-red-500" />
+                            Learning
+
                         </Link>
                         <Link href="/dashboardquiz" passHref className='mb-2 py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded'>
-                            
-                                <FaClipboardList className="inline-block mr-2 fill-red-500" />
-                                Quiz
-                            
+
+                            <FaClipboardList className="inline-block mr-2 fill-red-500" />
+                            Quiz
+
                         </Link>
                         <Link href="/essay" passHref className='mb-2 py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded'>
-                            
-                                <FaPen className="inline-block mr-2 fill-red-500" />
-                                Essay
-                            
-                        </Link>                  
 
-                        
+                            <FaPenSquare className="inline-block mr-2 fill-indigo-500" />
+                            Essay
+
+                        </Link>
+                        <Link href="/speaking" passHref className='mb-2 py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded'>
+
+                            <FaMicrophoneAlt className="inline-block mr-2 fill-indigo-500" />
+                            Speaking
+
+                        </Link>
+
+
                     </div>
                 </div>
             </div>

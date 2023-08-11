@@ -23,7 +23,7 @@ const DashboardPage = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-red-300 dark:bg-gray-900 p-4">
+        <div className="min-h-screen flex items-center justify-center bg-red-300 dark:bg-gray-900 p-4 bgsvg">
             <div className=" max-w-full mx-auto p-8 bg-stone-100 dark:bg-gray-800 rounded-md shadow-2xl ">
                 <div className="flex flex-col gap-4 flex-wrap">
                     <div className='flex flex-row gap-4 w flex-wrap '>
