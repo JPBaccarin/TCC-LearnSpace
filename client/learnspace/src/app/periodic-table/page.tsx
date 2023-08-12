@@ -4,8 +4,7 @@ type Props = {}
 
 function page({ }: Props) {
     return (
-        <div className='bg-slate-50'>
-
+        <div >                
             <Periodictable />
         </div>
     )

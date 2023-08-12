@@ -92,6 +92,12 @@ const Sidebar: React.FC<SidebarProps> = () => {
                             Speaking
 
                         </Link>
+                        <Link href="/periodic-table" passHref className='mb-2 py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded'>
+
+                            <FaMicrophoneAlt className="inline-block mr-2 fill-indigo-500" />
+                            Periodict-Table
+
+                        </Link>
 
 
                     </div>
