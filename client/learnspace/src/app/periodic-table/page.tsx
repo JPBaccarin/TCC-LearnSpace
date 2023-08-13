@@ -4,9 +4,9 @@ type Props = {}
 
 function page({ }: Props) {
     return (
-        <div >        
-            <div className='text'>
-                <div className='neon'>                    
+        <div className='min-w-screen min-h-screen bgsvg bg-gray-900' >        
+            <div className='periodictableheading'>
+                <div className=' neon '>                    
                     <h1>Tabela Periodica</h1>                    
                 </div>
             </div>        
