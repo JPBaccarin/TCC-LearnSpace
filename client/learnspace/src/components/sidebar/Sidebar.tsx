@@ -18,6 +18,7 @@ const sidebarItems = [
     { label: 'Periodic Table', href: '/periodic-table', icon: <FaFlask className="fill-red-500" /> },
     { label: 'Speaking', href: '/speaking', icon: <FaMicrophoneAlt className="fill-indigo-500" /> },
     { label: 'Login', href: '/login', icon: <FaPen className="fill-indigo-500" /> },
+    { label: 'corretor', href: '/CorretorComponent', icon: <FaPen className="fill-indigo-500" /> },
     
 ];
 
