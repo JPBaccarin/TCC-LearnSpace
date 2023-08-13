@@ -4,7 +4,12 @@ type Props = {}
 
 function page({ }: Props) {
     return (
-        <div >                
+        <div >        
+            <div className='text'>
+                <div className='neon'>                    
+                    <h1>Tabela Periodica</h1>                    
+                </div>
+            </div>        
             <Periodictable />
         </div>
     )

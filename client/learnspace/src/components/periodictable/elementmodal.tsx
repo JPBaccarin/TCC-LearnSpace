@@ -40,7 +40,8 @@ const ElementModal: React.FC<{ element: Element | null; onClose: () => void }> =
     }
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center z-50 ">
+        
+        <div className="fixed inset-0 flex items-center justify-center z-50 ">            
             <div className=" absolute inset-0 bg-gray-900 opacity-70 " onClick={onClose}></div>
             <div className=" bg-gray-700 shadow-xl w-3/4 md:max-w-lg mx-auto rounded z-50 overflow-y-auto ">
             <div className=" py-4 text-left px-6 divide-y divide-dotted divide-white/10 max-h-screen overflow-y-auto">
