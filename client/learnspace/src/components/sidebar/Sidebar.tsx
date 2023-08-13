@@ -4,6 +4,7 @@ import { FaBars, FaRegLightbulb, FaClipboardList, FaPenSquare, FaMicrophoneAlt, 
 import { AiOutlineClose } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 interface SidebarProps {
@@ -16,7 +17,8 @@ const sidebarItems = [
     { label: 'Quiz', href: '/dashboardquiz', icon: <FaPenSquare className="fill-red-500" /> },
     { label: 'Periodic Table', href: '/periodic-table', icon: <FaFlask className="fill-red-500" /> },
     { label: 'Speaking', href: '/speaking', icon: <FaMicrophoneAlt className="fill-indigo-500" /> },
-    { label: 'Essay', href: '/essay', icon: <FaPen className="fill-indigo-500" /> },
+    { label: 'Login', href: '/login', icon: <FaPen className="fill-indigo-500" /> },
+    
 ];
 
 const Sidebar: React.FC<SidebarProps> = () => {
