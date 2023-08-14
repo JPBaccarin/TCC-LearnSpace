@@ -17,7 +17,7 @@ function LoginPage(): React.JSX.Element {
         <LoginForm onSubmit={handleLoginSubmit} />
         <p className="mt-4 text-center">
           Ainda não tem uma conta?{' '}
-          <Link href="/dashboard">
+          <Link href="./">
             <p className="text-blue-500 hover:underline">Cadastre-se</p>
           </Link>
         </p>
