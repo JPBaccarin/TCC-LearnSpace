@@ -1,17 +1,7 @@
-import dynamic from 'next/dynamic';
+import Chat from '@/components/chat/chat'
 
-const DynamicCorretorComponent = dynamic(
-    () => import('@/components/corretor/CorrectorComponent'),
-    { ssr: false }
-);
+export const runtime = 'edge'
 
-const Corretor = () => {
-    return (
-        <div className="min-h-screen flex flex-col items-center justify-center sm:p-8 p-2 bg-red-300 bgsvg dark:bg-gray-900 accent-red-600 dark:text-white" >
-            <DynamicCorretorComponent />
-
-        </div>
-    );
-};
-
-export default Corretor;
+export default function Page() {
+    return <Chat />
+}

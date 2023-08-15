@@ -1,9 +1,17 @@
-import Image from 'next/image'
+// app/page.tsx -- server component
 
-export default function Home() {
+import Chat from '@/components/chat/chat'
+
+export const runtime = 'edge'
+
+import React from 'react'
+
+function page() {
   return (
-    <>
-      <h1>hello world!</h1>
-    </>
+    <div className='p-2 flex items-center justify-center bg-gray-900 min-h-screen'>
+      <Chat />
+    </div>
   )
 }
+
+export default page
