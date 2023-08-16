@@ -1,3 +1,4 @@
+'use client'
 import Sidebar from '@/components/sidebar/Sidebar'
 import './globals.css'
 import type { Metadata } from 'next'
