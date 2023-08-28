@@ -9,6 +9,9 @@ const page: React.FC = () => {
     <div className="bg-gray-900 ">
       <NavbarLandingPage />
       <Hero/>
+      <div className="h-[40px] bg-gray-900">
+
+      </div>
     </div>
   );
 };
