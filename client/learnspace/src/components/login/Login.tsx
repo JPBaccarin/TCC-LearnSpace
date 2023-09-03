@@ -1,34 +1,48 @@
+'use client'
 import React from 'react';
+import FormLogin from '@/components/login/Formlogin/Formlogin';
 import Link from 'next/link';
-import LoginForm from '@/components/Formlogin/Formlogin';
-
+import { send } from 'process';
 
 
 type Props = {}
 
-const Login = (props: Props) => {
-  const handleLoginSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // Lógica de autenticação aqui
+
+
+export default function LoginPage() {
+  const handleLogin = async (email: string, senha: string) => {
+    // Aqui você pode enviar os dados do formulário de login para a sua API de autenticação
+    const response = await fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, senha }),
+    });
+
+    if (response.status === 200) {
+      console.log('Login bem-sucedido!');
+      
+      // Redirecione o usuário para a página principal ou outra página relevante após o login.
+    } else {
+      console.error('Erro ao fazer login.');
+    }
   };
+
   return (
-    <>
-
-      <div className="min-h-screen min-w-full  flex items-center justify-center text-white bg-gray-900">
-        <div className="bg-gray-800 p-8 rounded-lg shadow-md w-80 border border-blue-500/10 shadow-blue-500/">
-          <h1 className="text-2xl font-semibold mb-4">Login</h1>
-          <LoginForm onSubmit={handleLoginSubmit} />
-          <p className="mt-4 flex items-center flex-col">
-            Ainda não tem uma conta?{' '}
-            <Link href="./">
-              <p className="text-blue-500 hover:underline">Cadastre-se</p>
-
-            </Link>
-          </p>
-        </div>
+    <div className=" text-white flex items-center justify-center">
+      <div className="bg-gray-800 p-8 rounded shadow-md w-96">
+        <h1 className="text-2xl font-bold mb-4">Login</h1>
+        <FormLogin onLogin={handleLogin} />
       </div>
-    </>
-  )
+
+    </div>
+  );
 }
 
-export default Login
+
+
+
+
+
+
