@@ -86,17 +86,32 @@
   0% {
     opacity: .75;
   }
+
   100% {
     opacity: 0;
   }
-  
+
 }
 
 .opacity-fade {
-  animation: cubic-bezier(0.19, 1, 0.22, 1) 0.5s opacity-fade ;
+  animation: cubic-bezier(0.19, 1, 0.22, 1) 0.5s opacity-fade;
 }
 
 
+
+/* SeuComponente.css */
+
+.glow:hover {
+  background-color: #fca311;
+  box-shadow: 0 0 10px rgba(252, 163, 17, 0.8);
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.cards__card.glow:hover {
+  background-color: #fca311;
+  box-shadow: 0 0 10px rgba(252, 163, 17, 0.8);
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
 
 
