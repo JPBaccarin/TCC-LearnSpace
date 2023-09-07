@@ -2,7 +2,7 @@ import React from 'react';
 
 interface ExerciseQuestionProps {
   question: string;
-  exerciseNumber: string
+  exerciseNumber: number
 
 }
 

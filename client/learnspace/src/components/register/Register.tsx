@@ -10,7 +10,7 @@ export default function Registro() {
 
   const handleRegistro = async (e: FormEvent) => {
     e.preventDefault();
-  
+
     // Aqui você pode enviar os dados do formulário para a sua API de registro
     const response = await fetch('http://localhost:3001/signup', {
       method: 'POST',
@@ -19,7 +19,7 @@ export default function Registro() {
       },
       body: JSON.stringify({ nome, email, senha, data_nasc: dataNasc }),
     });
-  
+
     if (response.status === 201) {
       console.log('Usuário registrado com sucesso!');
       setRegistroSucesso(true);
@@ -28,18 +28,17 @@ export default function Registro() {
       console.error('Erro ao registrar usuário.');
     }
   };
-  
+
 
   return (
-    <div className=" text-white flex items-center justify-center">
-      <div className="bg-gray-800 p-8 rounded shadow-md w-96">
+      <div className="text-white bg-gray-800 p-8 rounded shadow-md w-96">
         <h1 className="text-2xl font-bold mb-4">Registro</h1>
-        <form onSubmit={handleRegistro}>
+        <form onSubmit={handleRegistro} className=' flex flex-col'>
           <div className="mb-4">
             <label className="block ">Nome:</label>
             <input
               type="text"
-              className=" rounded w-full p-2 bg-gray-700"
+              className=" p-2 w-full shadow-md border border-blue-500/40 rounded-lg outline-none focus:outline-none focus:shadow-outline bg-gray-700"
               value={nome}
               onChange={(e) => setNome(e.target.value)}
             />
@@ -48,7 +47,7 @@ export default function Registro() {
             <label className="block ">Email:</label>
             <input
               type="email"
-              className=" rounded w-full p-2 bg-gray-700"
+              className=" p-2 w-full shadow-md border border-blue-500/40 rounded-lg outline-none focus:outline-none focus:shadow-outline bg-gray-700"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -57,7 +56,7 @@ export default function Registro() {
             <label className="block ">Senha:</label>
             <input
               type="password"
-              className=" rounded w-full p-2 bg-gray-700"
+              className=" p-2 w-full shadow-md border border-blue-500/40 rounded-lg outline-none focus:outline-none focus:shadow-outline bg-gray-700"
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
             />
@@ -66,7 +65,7 @@ export default function Registro() {
             <label className="block ">Data de Nascimento:</label>
             <input
               type="date"
-              className=" rounded w-full p-2 bg-gray-700"
+              className=" p-2 w-full shadow-md border border-blue-500/40 rounded-lg outline-none focus:outline-none focus:shadow-outline bg-gray-700 "
               value={dataNasc}
               onChange={(e) => setDataNasc(e.target.value)}
             />
@@ -74,9 +73,10 @@ export default function Registro() {
           <button type="submit" className="bg-blue-500 text-white rounded p-2 w-full hover:bg-blue-600">
             Registrar
           </button>
+          <a href="/login" className='text-center p-2 text-blue-500 hover:underline'>já possui conta?</a>
         </form>
+        <RegistroModal success={registroSucesso} onClose={() => setRegistroSucesso(false)} />
+
       </div>
-      <RegistroModal success={registroSucesso} onClose={() => setRegistroSucesso(false)} />
-    </div>
   );
 }

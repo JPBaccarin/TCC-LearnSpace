@@ -4,7 +4,7 @@ import Register from '@/components/register/Register'
 
 const page: React.FC = () => {
   return (
-    <div className="min-h-screen w-screen flex items-center justify-center bg-gray-900">      
+    <div className="min-h-screen w-screen flex items-center justify-center bg-gray-900 bgsvg  ">      
         <Register />
     </div>   
   );

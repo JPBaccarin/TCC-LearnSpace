@@ -1,16 +1,16 @@
 'use client'
 
 import React, { useState } from 'react';
-import ExerciseOptions from '@/components/quizexercise/exoptions';
-import ExerciseQuestion from '@/components/quizexercise/exquestions';
-import ExerciseResult from '@/components/quizexercise/exresult';
+import ExerciseOptions from '@/components/quiz/quizexercise/exoptions';
+import ExerciseQuestion from '@/components/quiz/quizexercise/exquestions';
+import ExerciseResult from '@/components/quiz/quizexercise/exresult';
 
 interface Exercise {
     id: number;
     question: string;
     options: string[];
     correctAnswer: string;
-    selectedOption: string | null;
+    selectedOption: string;
 }
 
 const ExercisePage: React.FC = () => {
@@ -23,14 +23,14 @@ const ExercisePage: React.FC = () => {
                 question: 'Qual é o resultado da pergunta 1?',
                 options: ['Resposta 1', 'Resposta 2', 'Resposta 3', 'Resposta 4'],
                 correctAnswer: 'Resposta 1',
-                selectedOption: null,
+                selectedOption: '',
             },
             {
                 id: 2,
                 question: 'Qual é o resultado da pergunta 2?',
                 options: ['Resposta 1', 'Resposta 2', 'Resposta 3', 'Resposta 4'],
                 correctAnswer: 'Resposta 1',
-                selectedOption: null,
+                selectedOption: '',
             },
             // Add more questions here...
             {
@@ -38,7 +38,7 @@ const ExercisePage: React.FC = () => {
                 question: 'Qual é o resultado da pergunta 3?',
                 options: ['Resposta 1', 'Resposta 2', 'Resposta 3', 'Resposta 4'],
                 correctAnswer: 'Resposta 1',
-                selectedOption: null,
+                selectedOption: '',
             },
         ];
     });

@@ -62,6 +62,23 @@ app.post('/login', async (req: Request, res: Response) => {
 });
 
 
+
+
+app.post('/quiz', async (req, res) => {
+    try {
+      const { exerciseType, exerciseDifficulty, exerciseQuestionCount } = req.body;
+      const [rows] = await db.query(
+        'SELECT * FROM questoes WHERE materia = ? AND dificuldade = ? ORDER BY RAND() LIMIT ?',
+        [exerciseType, exerciseDifficulty, exerciseQuestionCount]
+      );
+      
+      res.json(rows);
+    } catch (error) {
+      console.error('Erro ao buscar perguntas:', error);
+      res.status(500).json({ error: 'Ocorreu um erro ao buscar perguntas.' });
+    }
+  });
+
 const port = 3001;
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);

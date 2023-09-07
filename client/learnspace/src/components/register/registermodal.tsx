@@ -23,7 +23,7 @@ const RegistroModal: React.FC<RegistroModalProps> = ({ success, onClose }) => {
         <AnimatePresence>
             {isVisible && (
                 <motion.div
-                    className={`fixed left-4 bottom-4 w-40 h-12 flex items-center justify-center p-4 rounded-md ${success ? 'bg-green-500' : 'bg-red-500'
+                    className={`fixed left-4 bottom-4 w-fit h-fit flex items-center justify-center p-4 rounded-md animate-pulse duration-1000 ${success ? 'bg-green-500 ' : 'bg-red-500'
                         } text-white`}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}

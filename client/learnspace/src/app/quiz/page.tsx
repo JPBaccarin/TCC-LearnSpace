@@ -1,10 +1,10 @@
 'use client'
 
-import ExerciseSelectionCard from '@/components/dashboardquiz/exselectcard';
-import WeeklyGoalCard from '@/components/dashboardquiz/goalcard';
-import LastQuizCard from '@/components/dashboardquiz/lastquizcard';
-import LevelCard from '@/components/dashboardquiz/levelcard';
-import RecordsCard from '@/components/dashboardquiz/recordcard';
+import ExerciseSelectionCard from '@/components/quiz/dashboard/exselectcard';
+import WeeklyGoalCard from '@/components/quiz/dashboard/goalcard';
+import LastQuizCard from '@/components/quiz/dashboard/lastquizcard';
+import LevelCard from '@/components/quiz/dashboard/levelcard';
+import RecordsCard from '@/components/quiz/dashboard/recordcard';
 import React, { useState } from 'react';
 
 const DashboardPage = () => {

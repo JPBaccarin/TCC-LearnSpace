@@ -25,7 +25,7 @@ const FormLogin: React.FC<LoginFormProps> = ({ onLogin }) => {
           name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="p-2 w-full shadow-md border border-blue-500 rounded-lg outline-none focus:outline-none focus:shadow-outline bg-gray-700"
+          className="p-2 w-full shadow-md border border-blue-500/40 rounded-lg outline-none focus:outline-none focus:shadow-outline bg-gray-700"
         />
       </div>
       <div>
@@ -38,7 +38,7 @@ const FormLogin: React.FC<LoginFormProps> = ({ onLogin }) => {
           name="senha"
           value={senha}
           onChange={(e) => setSenha(e.target.value)}
-          className="p-2 w-full shadow-md border border-blue-500 rounded-lg outline-none focus:outline-none focus:shadow-outline bg-gray-700"
+          className="p-2 w-full shadow-md border border-blue-500/40 rounded-lg outline-none focus:outline-none focus:shadow-outline bg-gray-700"
         />
       </div>
       <button

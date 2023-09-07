@@ -48,6 +48,8 @@ const ExerciseSelectionCard: React.FC<ExerciseSelectionCardProps> = ({
           <option value="facil">Fácil</option>
           <option value="medio">Médio</option>
           <option value="dificil">Difícil</option>
+          <option value="mista">Mista</option>
+
         </select>
       </div>
       <div className="mb-4">
