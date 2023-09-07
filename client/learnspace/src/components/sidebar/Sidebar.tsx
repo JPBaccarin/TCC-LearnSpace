@@ -11,16 +11,16 @@ interface SidebarProps {
     // Se você tiver alguma prop específica, pode adicioná-la aqui.
 }
 
-const sidebarItems = [    
+const sidebarItems = [
     { label: 'Learning', href: '/learning', icon: <FaClipboardList className="fill-red-500" /> },
-    { label: 'Quiz', href: '/dashboardquiz', icon: <FaPenSquare className="fill-red-500" /> },
+    { label: 'Quiz', href: '/quiz', icon: <FaPenSquare className="fill-red-500" /> },
     { label: 'Periodic Table', href: '/periodic-table', icon: <FaFlask className="fill-red-500" /> },
     { label: 'Speaking', href: '/speaking', icon: <FaMicrophoneAlt className="fill-indigo-500" /> },
     { label: 'Login', href: '/login', icon: <FaPen className="fill-indigo-500" /> },
     { label: 'corretor', href: '/essay', icon: <FaPen className="fill-indigo-500" /> },
-    { label: 'Pagina Inicial', href: '/pageone', icon: <FaPen className="fill-indigo-500" /> },
-    
-    
+    { label: 'Pagina Inicial', href: '/landingpage', icon: <FaPen className="fill-indigo-500" /> },
+
+
 ];
 
 const Sidebar: React.FC<SidebarProps> = () => {

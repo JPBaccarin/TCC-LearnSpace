@@ -11,7 +11,7 @@ const NavbarLandingPage: React.FC = () => {
     };
 
     return (
-        <nav className="bg-gray-800 p-4">
+        <nav className="backdrop-blur-sm p-4 sticky z-50 top-0 shadow-sm">
             <div className="container mx-auto flex justify-between items-center">
                 <div className="text-white font-bold text-xl">Seu Logo</div>
 
