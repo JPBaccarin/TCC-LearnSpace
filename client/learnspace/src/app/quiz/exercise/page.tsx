@@ -1,12 +1,11 @@
 'use client'
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ExerciseOptions from '@/components/quiz/quizexercise/exoptions';
 import ExerciseQuestion from '@/components/quiz/quizexercise/exquestions';
 import ExerciseResult from '@/components/quiz/quizexercise/exresult';
 
 interface Exercise {
-    id: number;
+    id:number;
     question: string;
     options: string[];
     correctAnswer: string;
@@ -15,33 +14,7 @@ interface Exercise {
 
 const ExercisePage: React.FC = () => {
     const [currentExercise, setCurrentExercise] = useState<number>(0);
-    const [exercises, setExercises] = useState<Exercise[]>(() => {
-        // Initialize exercises with the selectedOption set to null for each question
-        return [
-            {
-                id: 1,
-                question: 'Qual é o resultado da pergunta 1?',
-                options: ['Resposta 1', 'Resposta 2', 'Resposta 3', 'Resposta 4'],
-                correctAnswer: 'Resposta 1',
-                selectedOption: '',
-            },
-            {
-                id: 2,
-                question: 'Qual é o resultado da pergunta 2?',
-                options: ['Resposta 1', 'Resposta 2', 'Resposta 3', 'Resposta 4'],
-                correctAnswer: 'Resposta 1',
-                selectedOption: '',
-            },
-            // Add more questions here...
-            {
-                id: 3,
-                question: 'Qual é o resultado da pergunta 3?',
-                options: ['Resposta 1', 'Resposta 2', 'Resposta 3', 'Resposta 4'],
-                correctAnswer: 'Resposta 1',
-                selectedOption: '',
-            },
-        ];
-    });
+    const [exercises, setExercises] = useState<Exercise[]>([]);
     const [correctCount, setCorrectCount] = useState<number>(0);
     const [quizCompleted, setQuizCompleted] = useState<boolean>(false);
 
@@ -65,6 +38,32 @@ const ExercisePage: React.FC = () => {
             return updatedExercises;
         });
     };
+
+    useEffect(() => {
+        // Substitua esta chamada por uma função que faz a solicitação à sua API para obter as perguntas do novo quiz
+        const fetchQuizQuestions = async () => {
+            try {
+                const response = await fetch('/api/create-quiz', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ exerciseType: 'algebra', exerciseDifficulty: 'facil', exerciseQuestionCount: 3 }),
+                });
+
+                if (response.ok) {
+                    const newQuiz: Exercise[] = await response.json();
+                    setExercises(newQuiz);
+                } else {
+                    console.error('Erro ao criar novo quiz.');
+                }
+            } catch (error) {
+                console.error('Erro ao criar novo quiz:', error);
+            }
+        };
+
+        fetchQuizQuestions(); // Chame a função para obter as perguntas do novo quiz
+    }, []);
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-red-300 dark:bg-gray-900">

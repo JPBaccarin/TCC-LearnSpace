@@ -64,20 +64,32 @@ app.post('/login', async (req: Request, res: Response) => {
 
 
 
-app.post('/quiz', async (req, res) => {
+app.post('new-quiz', async (req: Request, res: Response) => {
+    const { exerciseType, exerciseDifficulty, exerciseQuestionCount } = req.body;
+
     try {
-      const { exerciseType, exerciseDifficulty, exerciseQuestionCount } = req.body;
-      const [rows] = await db.query(
-        'SELECT * FROM questoes WHERE materia = ? AND dificuldade = ? ORDER BY RAND() LIMIT ?',
-        [exerciseType, exerciseDifficulty, exerciseQuestionCount]
-      );
-      
-      res.json(rows);
+        // Consulte o banco de dados com base nas opções selecionadas
+        const [rows]: [RowDataPacket[], any] = await db.query(
+            'SELECT * FROM questions WHERE type = ? AND difficulty = ? LIMIT ?',
+            [exerciseType, exerciseDifficulty, exerciseQuestionCount]
+        );
+
+        // Transforme os resultados do banco de dados em um formato adequado para o novo quiz
+        const newQuiz = rows.map((row: RowDataPacket) => {
+            return {
+                question: row.question,
+                options: JSON.parse(row.options),
+                correctAnswer: row.correctAnswer,
+                selectedOption: '', // Inicialmente, nenhuma opção é selecionada
+            };
+        });
+
+        res.json(newQuiz);
     } catch (error) {
-      console.error('Erro ao buscar perguntas:', error);
-      res.status(500).json({ error: 'Ocorreu um erro ao buscar perguntas.' });
+        console.error('Erro ao criar novo quiz:', error);
+        res.status(500).json({ error: 'Erro ao criar novo quiz' });
     }
-  });
+});
 
 const port = 3001;
 app.listen(port, () => {
