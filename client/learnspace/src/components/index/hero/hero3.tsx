@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+
 type NavbarItemProps = {
   title: string;
   description: string;
@@ -10,24 +11,24 @@ type NavbarItemProps = {
 const SiteExplanation: React.FC = () => {
   const navbarItems: NavbarItemProps[] = [
     {
-      title: "Funcionalidade 1",
-      description: "Descrição da Funcionalidade 1. Aqui estão algumas informações adicionais sobre esta funcionalidade:",
-      image: "https://placehold.co/600x400",
+      title: "IA english",
+      description: "Essa funcionalida é feita para treinar, o aluno com sua comunicação em ingles com outras pessoas,ou lhe dar dicas sobre sua pronuncia, tudo sem acompanha por uma IA.",
+      image: "/BD_Tcc/img/teste.png",
     },
     {
-      title: "Funcionalidade 2",
-      description: "Descrição da Funcionalidade 2. Além disso, você pode ver alguns detalhes extras aqui:",
-      image: "https://placehold.co/600x400",
+      title: "Corretor IA",
+      description: "Essa funcionalidade tem como principal objetivo corrigir redações, mostrando seus erros,e melhoramentos na sua escrita,tudo por uma IA",
+      image: "../hero/redação.jpeg",
     },
     {
-      title: "Funcionalidade 3",
-      description: "Descrição da Funcionalidade 3. Incluindo detalhes importantes:",
-      image: "https://placehold.co/600x400",
+      title: "Quiz",
+      description: "Essa funcionalidade traria varias questões sobre o que o aluno ou internauta teria estudado.",
+      image: "../hero/quiz.jpeg",
     },
     {
-      title: "Funcionalidade 4",
-      description: "Descrição da Funcionalidade 4. E aqui estão algumas informações adicionais:",
-      image: "https://placehold.co/600x400",
+      title: "Learning",
+      description: "Essa funcionalida tras varios conteudos sobre materias escolares e diversas, para o aprendizado.",
+      image: "../hero/learning.jpeg",
     },
   ];
 
@@ -64,12 +65,7 @@ const SiteExplanation: React.FC = () => {
               <div className="w-2/3">
                 <motion.div className="w-5/6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                   <h1 className="text-2xl font-bold mb-2">{selectedItem.title}</h1>
-                  <p>{selectedItem.description}</p>
-                  <ul className="list-disc ml-4">
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                  </ul>
+                  <p>{selectedItem.description}</p>                  
                 </motion.div>
               </div>
               <div className="w-1/3">

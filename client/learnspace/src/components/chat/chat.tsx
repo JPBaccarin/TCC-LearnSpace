@@ -11,7 +11,7 @@ function chat({ }: Props) {
     
 
     return (
-
+        
         <div className='flex  bg-gray-800 p-2 flex-col items-center justify-center w-full   sm:w-3/4 h-fit m-0 sm:m-2 text-white rounded-lg '>
             <div className='w-5/6 h-fit flex flex-col max-h-screen '>
                 <div className='flex flex-col mt-2 p-2 border-b border-red-500/25 border-dashed '>

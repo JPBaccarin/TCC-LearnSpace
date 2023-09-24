@@ -10,16 +10,16 @@ interface FAQItem {
 const FAQSection: React.FC = () => {
     const faqData: FAQItem[] = [
         {
-            question: 'Pergunta 1?',
-            answer: 'Resposta para a pergunta 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            question: 'Vocês pretendem melhorar ainda mais?',
+            answer: 'Claro meu caro internauta estamos sempre em constante aperfeiçoamento.',
         },
         {
-            question: 'Pergunta 2?',
-            answer: 'Resposta para a pergunta 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            question: 'Voces pretende deixar essa belezura , paga?',
+            answer: 'Prentedemos deixar nosso serviço um pouco dos dois, deixando tanto livre para o internauta experimentar, quanto paga para ele usufruir mais do nosso serviço.',
         },
         {
-            question: 'Pergunta 3?',
-            answer: 'Resposta para a pergunta 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            question: 'Quanto seria essa quantia?',
+            answer: 'pretendemos deixar com duas assinaturas , uma de 30 para o assinante usufruir  das maiorias das aplicações , e 40 para a experiencia total do usuario',
         },
     ];
 

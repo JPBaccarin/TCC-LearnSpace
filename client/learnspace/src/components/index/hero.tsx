@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
           Sua plataforma de estudos com IA
         </motion.p>
         <motion.a
-          href="#"
+          href="/login/register"
           className="bg-white text-blue-500 py-2 px-6 rounded-full sm:text-lg hover:bg-blue-500 hover:text-white transition duration-300 ease-in-out text-base"
           whileHover={{ scale: 1.1 }}
         >
