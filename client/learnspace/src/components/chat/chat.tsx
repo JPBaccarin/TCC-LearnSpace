@@ -1,21 +1,22 @@
 'use client'
 
 import { useChat } from 'ai/react'
-import React from 'react'
 
 type Props = {}
 
 function chat({ }: Props) {
     const { messages, input, handleInputChange, handleSubmit, } = useChat()
 
-    
-
     return (
-        
+
         <div className='flex  bg-gray-800 p-2 flex-col items-center justify-center w-full   sm:w-3/4 h-fit m-0 sm:m-2 text-white rounded-lg '>
             <div className='w-5/6 h-fit flex flex-col max-h-screen '>
-                <div className='flex flex-col mt-2 p-2 border-b border-red-500/25 border-dashed '>
+                <div className='flex flex-row mt-2 p-2 border-b border-red-500/25 border-dashed justify-between'>
                     <h1 className='font-bold text-xl text-gray-200 w-fit '>LearnSpace AI</h1>
+                    <select name="optionSelected" id="optionSelected">
+                        <option value="corrigirRedacoes" id="corrigirRedacoes" selected>Corrigir redações</option>
+                        <option value="criarPerguntas" id="criarPerguntas">Criar perguntas</option>
+                    </select>
                 </div>
                 <div className='overflow-y-scroll px-2'>
                     {messages
@@ -23,7 +24,7 @@ function chat({ }: Props) {
                         .map(m => {
                             return (
                                 <div key={m.id} className='flex flex-row my-2 p-4 rounded-md bg-gray-900/50 '>
-                                    <div className='h-[100px] w-[100px] mr-2' >
+                                    <div className='h-12 w-12 mr-2' >
                                         {m.role === 'user' && (
                                             <img src="https://placehold.co/400" alt="" className='rounded-full' />
                                         )}
@@ -32,7 +33,7 @@ function chat({ }: Props) {
                                             <img src="favicon.ico" alt="" className='rounded-full' />
                                         )}
                                     </div>
-                                    <p className='leading-relaxed'>
+                                    <p className='leading-relaxed w-full'>
                                         <span className='block font-bold '>{m.role === 'user' ? 'usuário' : 'AI'}</span>
                                         {m.content}
                                     </p>

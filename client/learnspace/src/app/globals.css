@@ -19,7 +19,18 @@
     /* Borda arredondada do thumb */
   }
 
+  /* Estilizando o select*/
+  select {
+    appearance: none;
+    background-color: transparent;
+    color: rgb(107 114 128);
+  }
 
+  /* Estilizando o option*/
+  option {
+    background-color: rgb(31 41 55);
+    color: rgb(229 231 235);
+  }
 
   /* Estilizando a área onde o thumb se move */
   ::-webkit-scrollbar-track {
