@@ -13,7 +13,7 @@ const NavbarLandingPage: React.FC = () => {
     return (
         <nav className="backdrop-blur-sm p-4 sticky z-50 top-0 shadow-sm">
             <div className="container mx-auto flex justify-between items-center">
-                <div className="text-white font-bold text-xl">Seu Logo</div>
+                <div className="text-white font-bold text-xl">SEu logo</div>
 
                 <div className="hidden md:flex space-x-4">
                     <a href="#" className="text-white hover:text-gray-300">Página Inicial</a>
@@ -31,7 +31,7 @@ const NavbarLandingPage: React.FC = () => {
             {isOpen && (
                 <div className="md:hidden bg-gray-500">
                     <a href="#" className="block py-2 px-4 text-white hover:bg-gray-600">Página Inicial</a>
-                    <a href="#" className="block py-2 px-4 text-white hover:bg-gray-600">Sobre Nós</a>
+                    <a href="/Sobre" className="block py-2 px-4 text-white hover:bg-gray-600">Sobre Nós</a>
                     <a href="#" className="block py-2 px-4 text-white hover:bg-gray-600">Contato</a>
                 </div>
             )}
