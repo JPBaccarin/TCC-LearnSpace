@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-
+import Image from 'next/image';
 const colors = ['#EF4444', '#F04343', '#DC2626', '#B91C1C', '#991B1B'];
+
+
 
 const Hero: React.FC = () => {
   useEffect(() => {
@@ -36,7 +38,7 @@ const Hero: React.FC = () => {
       <div className="rain-container">
         {/* Os elementos da chuva de letras serão criados dinamicamente aqui */}
       </div>
-      <h1>Sobre Nos</h1>
+      
       <motion.div
         className="flex flex-col items-center text-center z-10 bg-gray-900/75 backdrop-blur-sm p-6 rounded-xl"
         initial={{ opacity: 0, y: 50 }}
@@ -50,6 +52,14 @@ const Hero: React.FC = () => {
         >
           <h1>Sobre Nos</h1>
         </motion.div>
+
+        <motion.div
+          className="sm:text-5xl text-4xl font-extrabold mb-4"
+          whileHover={{ scale: 1.02}}
+        >
+          <Image/>
+        </motion.div>
+
         <motion.p
           className="sm:text-lg text-base px-40 mb-8"
           whileHover={{ scale: 1.02 }}
