@@ -1,0 +1,30 @@
+/* styles.css */
+h1 {
+    @apply text-4xl font-bold mb-2;
+    /* Exemplo de classe de tamanho do Tailwind para h1 */
+}
+
+h2 {
+    @apply text-3xl font-semibold mb-2;
+    /* Exemplo de classe de tamanho do Tailwind para h2 */
+}
+
+h3 {
+    @apply text-2xl font-semibold mb-2;
+    /* Exemplo de classe de tamanho do Tailwind para h3 */
+}
+
+h4 {
+    @apply text-xl font-semibold mb-2;
+    /* Exemplo de classe de tamanho do Tailwind para h4 */
+}
+
+h5 {
+    @apply text-lg font-semibold mb-2;
+    /* Exemplo de classe de tamanho do Tailwind para h5 */
+}
+
+h6 {
+    @apply text-base font-semibold mb-2;
+    /* Exemplo de classe de tamanho do Tailwind para h6 */
+}
