@@ -103,7 +103,7 @@ export default function Page() {
                                 key={blog.id}
                                 title={blog.attributes.Title}
                                 summary={blog.attributes.Summary}
-                                linkUrl={`/${blog.attributes.Slug}`}
+                                linkUrl={`learning/${blog.attributes.Slug}`}
                                 imageUrl={`${config.api}${blog.attributes.Thumbnail.data.attributes.formats.thumbnail.url}`}
                                 category={blog.attributes.Category}
                             />

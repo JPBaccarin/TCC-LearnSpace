@@ -1,20 +1,44 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ExerciseOptions from '@/components/quiz/quizexercise/exoptions';
 import ExerciseQuestion from '@/components/quiz/quizexercise/exquestions';
 import ExerciseResult from '@/components/quiz/quizexercise/exresult';
 
 interface Exercise {
-    id:number;
+    id: number;
     question: string;
     options: string[];
     correctAnswer: string;
     selectedOption: string;
 }
 
+const questions: Exercise[] = [
+    {
+        id: 1,
+        question: 'Qual é a capital do Brasil?',
+        options: ['Rio de Janeiro', 'Brasília', 'São Paulo', 'Salvador'],
+        correctAnswer: 'Brasília',
+        selectedOption: '',
+    },
+    {
+        id: 2,
+        question: 'Quanto é 2 + 2?',
+        options: ['3', '4', '5', '6'],
+        correctAnswer: '4',
+        selectedOption: '',
+    },
+    {
+        id: 3,
+        question: 'Qual é o maior planeta do nosso sistema solar?',
+        options: ['Terra', 'Júpiter', 'Marte', 'Vênus'],
+        correctAnswer: 'Júpiter',
+        selectedOption: '',
+    },
+];
+
 const ExercisePage: React.FC = () => {
     const [currentExercise, setCurrentExercise] = useState<number>(0);
-    const [exercises, setExercises] = useState<Exercise[]>([]);
+    const [exercises, setExercises] = useState<Exercise[]>(questions);
     const [correctCount, setCorrectCount] = useState<number>(0);
     const [quizCompleted, setQuizCompleted] = useState<boolean>(false);
 
@@ -38,32 +62,6 @@ const ExercisePage: React.FC = () => {
             return updatedExercises;
         });
     };
-
-    useEffect(() => {
-        // Substitua esta chamada por uma função que faz a solicitação à sua API para obter as perguntas do novo quiz
-        const fetchQuizQuestions = async () => {
-            try {
-                const response = await fetch('/api/create-quiz', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ exerciseType: 'algebra', exerciseDifficulty: 'facil', exerciseQuestionCount: 3 }),
-                });
-
-                if (response.ok) {
-                    const newQuiz: Exercise[] = await response.json();
-                    setExercises(newQuiz);
-                } else {
-                    console.error('Erro ao criar novo quiz.');
-                }
-            } catch (error) {
-                console.error('Erro ao criar novo quiz:', error);
-            }
-        };
-
-        fetchQuizQuestions(); // Chame a função para obter as perguntas do novo quiz
-    }, []);
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-red-300 dark:bg-gray-900">
