@@ -1,5 +1,6 @@
 'use client'
 
+import IconCopy from '@/icons/IconCopy';
 import { useChat } from 'ai/react'
 
 type Props = {}
@@ -7,13 +8,22 @@ type Props = {}
 function chat({ }: Props) {
     const { messages, input, handleInputChange, handleSubmit, } = useChat()
 
+    const copyText = (text: string) => {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+      };
+
     return (
 
-        <div className='flex  bg-gray-800 p-2 flex-col items-center justify-center w-full   sm:w-3/4 h-fit m-0 sm:m-2 text-white rounded-lg '>
+        <div className='flex  bg-gray-800 p-2 flex-col items-center justify-center w-full sm:w-3/4 h-fit m-0 sm:m-2 text-white rounded-lg '>
             <div className='w-5/6 h-fit flex flex-col max-h-screen '>
                 <div className='flex flex-row mt-2 p-2 border-b border-red-500/25 border-dashed justify-between'>
                     <h1 className='font-bold text-xl text-gray-200 w-fit '>LearnSpace AI</h1>
-                    <select name="optionSelected" id="optionSelected">
+                    <select name="optionSelected" id="optionSelected" className='text-black cursor-pointer p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white'>
                         <option value="corrigirRedacoes" id="corrigirRedacoes" selected>Corrigir redações</option>
                         <option value="criarPerguntas" id="criarPerguntas">Criar perguntas</option>
                     </select>
@@ -34,8 +44,22 @@ function chat({ }: Props) {
                                         )}
                                     </div>
                                     <p className='leading-relaxed w-full'>
-                                        <span className='block font-bold '>{m.role === 'user' ? 'usuário' : 'AI'}</span>
-                                        {m.content}
+                                        <div className='flex flex-row justify-between'>
+                                            <span className='block font-bold '>{m.role === 'user' ? 'usuário' : 'AI'}</span>
+                                            <div className='group'>
+                                                <IconCopy
+                                                    className='text-gray-500 cursor-pointer hover:text-gray-200'
+                                                    onClick={() => copyText(m.content)}
+                                                />
+                                                <span
+                                                    className="group-hover:visible block invisible bg-gray-800 text-gray-200 text-center p-2 mt-2 absolute text-xs">
+                                                    Copiar
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div id="content">
+                                            {m.content}
+                                        </div>
                                     </p>
                                 </div>
                             )
