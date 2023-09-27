@@ -13,12 +13,12 @@ const NavbarLandingPage: React.FC = () => {
     return (
         <nav className="backdrop-blur-sm p-4 sticky z-50 top-0 shadow-sm">
             <div className="container mx-auto flex justify-between items-center">
-                <div className="text-white font-bold text-xl">SEu logo</div>
+                <div className="text-white font-bold text-xl">Seu logo</div>
 
                 <div className="hidden md:flex space-x-4">
-                    <a href="#" className="text-white hover:text-gray-300">Página Inicial</a>
-                    <a href="#" className="text-white hover:text-gray-300">Sobre Nós</a>
-                    <a href="#" className="text-white hover:text-gray-300">Contato</a>
+                    <a href="../landingpage" className="text-white hover:text-gray-300">Página Inicial</a>
+                    <a href="../Sobre" className="text-white hover:text-gray-300">Sobre Nós</a>
+                    <a href="../Contato" className="text-white hover:text-gray-300">Contato</a>
                 </div>
 
                 <div className="md:hidden flex items-center">
