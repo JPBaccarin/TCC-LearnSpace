@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-gray-900 h-screen max-h-[600px] flex flex-col justify-center items-left text-white relative overflow-hidden transition- duration-150">
+    <section className="bg-gray-900 h-screen max-h-[600px] flex  p-32 flex-col justify-center items-center text-white relative overflow-hidden transition- duration-150">
       <div className="rain-container">
         {/* Os elementos da chuva de letras serão criados dinamicamente aqui */}
       </div>
