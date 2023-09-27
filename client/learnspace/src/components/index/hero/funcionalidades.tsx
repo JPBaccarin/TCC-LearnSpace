@@ -1,34 +1,34 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import {  redacao, quiz,iaenglish,learning } from './images';
 
 type NavbarItemProps = {
   title: string;
   description: string;
-  image: string;
+  image: any;
 };
 
-const SiteExplanation: React.FC = () => {
+const Funcionalidades: React.FC = () => {
   const navbarItems: NavbarItemProps[] = [
     {
       title: "IA english",
       description: "Essa funcionalida é feita para treinar, o aluno com sua comunicação em ingles com outras pessoas,ou lhe dar dicas sobre sua pronuncia, tudo sem acompanha por uma IA.",
-      image: "/BD_Tcc/img/teste.png",
+      image: quiz,
     },
     {
       title: "Corretor IA",
       description: "Essa funcionalidade tem como principal objetivo corrigir redações, mostrando seus erros,e melhoramentos na sua escrita,tudo por uma IA",
-      image: "../hero/redação.jpeg",
+      image: {redacao},
     },
     {
       title: "Quiz",
       description: "Essa funcionalidade traria varias questões sobre o que o aluno ou internauta teria estudado.",
-      image: "../hero/quiz.jpeg",
+      image: iaenglish,
     },
     {
       title: "Learning",
       description: "Essa funcionalida tras varios conteudos sobre materias escolares e diversas, para o aprendizado.",
-      image: "../hero/learning.jpeg",
+      image: learning,
     },
   ];
 
@@ -45,9 +45,8 @@ const SiteExplanation: React.FC = () => {
           <button
             key={item.title}
             onClick={() => handleItemClick(item)}
-            className={`${
-              selectedItem === item ? 'text-blue-500' : 'bg-gray-800'
-            } text-white p-2 rounded-md m-2`}
+            className={`${selectedItem === item ? 'text-blue-500' : 'bg-gray-800'
+              } text-white p-2 rounded-md m-2`}
           >
             {item.title}
           </button>
@@ -65,7 +64,7 @@ const SiteExplanation: React.FC = () => {
               <div className="w-2/3">
                 <motion.div className="w-5/6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                   <h1 className="text-2xl font-bold mb-2">{selectedItem.title}</h1>
-                  <p>{selectedItem.description}</p>                  
+                  <p>{selectedItem.description}</p>
                 </motion.div>
               </div>
               <div className="w-1/3">
@@ -87,4 +86,4 @@ const SiteExplanation: React.FC = () => {
   );
 };
 
-export default SiteExplanation;
+export default Funcionalidades;

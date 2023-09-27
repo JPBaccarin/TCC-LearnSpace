@@ -172,8 +172,8 @@ const BlogPage = async (props: any) => {
     const blog = blogs.data[0];
 
     return (
-        <div className='bg-gray-800 bgsvg w-full h-screen dark:text-white flex justify-center items-center'>
-            <div className='bg-gray-700 flex flex-col w-2/3 rounded-md p-5'>
+        <div className='bg-gray-900 bgsvg w-full h-full p-4 dark:text-white flex justify-center items-center'>
+            <div className='bg-gray-800 flex flex-col w-2/3 rounded-md p-5 h-fit'>
                 <h2 className='text-center text-4xl font-bold'>{blog.attributes.Title}</h2>
                 <div className='px-4 py-2'>
                     <ReactMarkdown>{blog.attributes.Content}</ReactMarkdown>

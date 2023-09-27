@@ -28,7 +28,7 @@ const Cardpost: React.FC<CardpostProps> = ({ title, summary, linkUrl, imageUrl, 
         ></div>
 
         <div className="absolute top-0 left-0 m-2">
-            <div className="bg-yellow-500 rounded-md text-sm p-1">{category}</div>
+            <div className="bg-red-500 rounded-md text-sm p-1">{category}</div>
         </div>
 
         <div className="bg-black h-44 p-4 text-sm rounded-b-md">

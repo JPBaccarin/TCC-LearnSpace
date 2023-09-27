@@ -64,7 +64,7 @@ const ExercisePage: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-red-300 dark:bg-gray-900">
+        <div className="min-h-screen flex items-center justify-center bg-red-300 dark:bg-gray-900 bgsvg">
             <div className="max-w-md w-full mx-auto p-8 bg-white dark:bg-gray-800 rounded-md shadow-2xl">
                 {!quizCompleted ? (
                     <>

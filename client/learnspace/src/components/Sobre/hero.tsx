@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Image from '../Sobre/img/img'
-const colors = ['#EF4444', '#F04343', '#DC2626', '#B91C1C', '#991B1B'];
+import minhaImagem1 from './img/images';
+import Image from 'next/image';
 
+
+const colors = ['#EF4444', '#F04343', '#DC2626', '#B91C1C', '#991B1B'];
+// Importe Image do next/image
 
 
 const Hero: React.FC = () => {
@@ -26,7 +29,7 @@ const Hero: React.FC = () => {
         rainElement.style.fontSize = fontSize;
         rainElement.style.opacity = opacity; // Corrigido para string
         rainElement.style.transform = `rotate(${rotation}deg)`;
-        rainElement.textContent = String.fromCharCode(Math.random() * 200 + 65);
+        rainElement.textContent = String.fromCharCode(Math.random() * 26 + 65);
 
         rainContainer.appendChild(rainElement);
       }
@@ -34,58 +37,64 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-gray-900 h-screen max-h-[800px] flex flex-col justify-center items-center text-white relative overflow-hidden transition- duration-150">
+    <section className="bg-gray-900 h-full flex flex-col justify-center items-center text-white relative overflow-hidden transition- duration-150">
       <div className="rain-container">
         {/* Os elementos da chuva de letras serão criados dinamicamente aqui */}
       </div>
-      
-      <motion.div
-        className="flex flex-col items-center text-center z-10 bg-gray-900/75 backdrop-blur-sm p-6 rounded-xl"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        
+
+      <div className='h-full'>
         <motion.div
-          className="sm:text-5xl text-4xl font-extrabold mb-4"
-          whileHover={{ scale: 1.02 }}
+          className="flex flex-col items-center text-center z-10 bg-gray-900/75 backdrop-blur-sm p-6 rounded-xl"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
         >
-          <h1>Sobre Nos</h1>
+
+          <motion.div
+            className="sm:text-5xl text-4xl font-extrabold mb-4"
+            whileHover={{ scale: 1.02 }}
+          >
+            <h1>Sobre Nos</h1>
+          </motion.div>
+
+          <motion.div
+            className="sm:text-5xl  text-4xl absolute inset-y-72 left-0 font-extrabold mb-4"
+            whileHover={{ scale: 1.02 }}
+          >
+          </motion.div>
+
+
+          <motion.div
+            className="sm:text-5xl text-4xl font-extrabold mb-4"
+            whileHover={{ scale: 1.02 }}
+          >
+
+          </motion.div>
+
+          <motion.p
+            className="sm:text-lg text-left px-52 mb-8"
+            whileHover={{ scale: 1.02 }}
+          >
+            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there is not anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+            <br />
+            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there is not anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+
+          </motion.p>
+
+          <motion.div
+            className="sm:text-5xl text-4xl font-extrabold mb-4"
+            whileHover={{ scale: 1.02 }}
+          >
+            <h1>Ideias Futuras</h1>
+          </motion.div>
+          <Image
+            src={minhaImagem1}
+            alt="Imagem 3"
+            width={600}
+            height={400}
+          />
         </motion.div>
-
-        <motion.div
-          className="sm:text-5xl  text-4xl absolute inset-y-72 left-0 font-extrabold mb-4"
-          whileHover={{ scale: 1.02 }}
-        >
-          <Image/>
-        </motion.div>
-        
-
-        <motion.div
-          className="sm:text-5xl text-4xl font-extrabold mb-4"
-          whileHover={{ scale: 1.02}}
-        >
-          
-        </motion.div>
-
-        <motion.p
-          className="sm:text-lg text-left px-52 mb-8"
-          whileHover={{ scale: 1.02 }}
-        >
-          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there is not anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-          <br/>
-          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there is not anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-          
-        </motion.p>
-
-        <motion.div
-          className="sm:text-5xl text-4xl font-extrabold mb-4"
-          whileHover={{ scale: 1.02 }}
-        >
-          <h1>Ideias Futuras</h1>
-        </motion.div>
-
-      </motion.div>
+      </div>
     </section>
   );
 };

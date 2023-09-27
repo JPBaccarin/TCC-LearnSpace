@@ -17,7 +17,7 @@ const NavbarLandingPage: React.FC = () => {
 
                 <div className="hidden md:flex space-x-4">
                     <a href="../landingpage" className="text-white hover:text-gray-300">Página Inicial</a>
-                    <a href="../Sobre" className="text-white hover:text-gray-300">Sobre Nós</a>
+                    <a href="landingpage/Sobre" className="text-white hover:text-gray-300">Sobre Nós</a>
                     <a href="../Contato" className="text-white hover:text-gray-300">Contato</a>
                 </div>
 
