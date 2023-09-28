@@ -7,6 +7,8 @@ import LevelCard from '@/components/quiz/dashboard/levelcard';
 import RecordsCard from '@/components/quiz/dashboard/recordcard';
 import React, { useState } from 'react';
 
+
+
 const DashboardPage = () => {
     const [completedExercises, setCompletedExercises] = useState<number>(25);
     const [currentLevel, setCurrentLevel] = useState<number>(5);
@@ -39,7 +41,7 @@ const DashboardPage = () => {
                         <ExerciseSelectionCard
                             exerciseType={exerciseType}
                             exerciseDifficulty={exerciseDifficulty}
-                            handleExerciseSelection={handleExerciseSelection} exerciseQuestionCount={0}                        />
+                            handleExerciseSelection={handleExerciseSelection}                         />
 
 
                         <LastQuizCard score={0} topic={''} date={''} />

@@ -1,37 +1,41 @@
-import { useRouter } from 'next/navigation'; // Importe 'next/router' em vez de 'next/navigation'
+'use client'
+ // Importe 'next/router'
 import { useState } from 'react';
+import Link from 'next/link'; // Importe o Link
+import { usePathname } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 interface ExerciseSelectionCardProps {
+  exerciseType: string;
+  exerciseDifficulty: string;
   handleExerciseSelection: (field: string, value: string | number) => any;
+  
 }
 
 const ExerciseSelectionCard: React.FC<ExerciseSelectionCardProps> = ({
   handleExerciseSelection,
 }) => {
-  // Estado para armazenar as opções selecionadas pelo usuário
   const [exerciseType, setExerciseType] = useState('');
   const [exerciseDifficulty, setExerciseDifficulty] = useState('');
-  const [exerciseQuestionCount, setExerciseQuestionCount] = useState<number>(0); // Defina o tipo como number
 
   const router = useRouter();
 
-  // Função para enviar as opções selecionadas para a página de exercício
+  const pathname = usePathname();
+  
   const handleStartQuiz = () => {
-    // Verifica se todas as opções foram selecionadas
-    if (exerciseType && exerciseDifficulty && exerciseQuestionCount > 0) {
-      // Redireciona para a página de exercício com as opções como parâmetros de consulta
-      router.push(
-        `/exercise?exerciseType=${exerciseType}&exerciseDifficulty=${exerciseDifficulty}&exerciseQuestionCount=${exerciseQuestionCount}`
-      );
+    if (exerciseType && exerciseDifficulty) {
+      // Create the query string for the exercise parameters
+      const queryParams = `?exerciseType=${exerciseType}&exerciseDifficulty=${exerciseDifficulty}`;
+      
+      // Use the router to navigate to the ExercisePage with the parameters
+      router.push(`/quiz/exercise${queryParams}`);
     } else {
       alert('Por favor, selecione todas as opções antes de iniciar o quiz.');
     }
   };
 
   const exerciseOptions = [
-    { id: 1, type: 'algebra' },
-    { id: 2, type: 'geometria' },
-    { id: 3, type: 'estatistica' },
+    { id: 1, type: 'Matemática', exerciseDifficulty: 'Médio' },
   ];
 
   return (
@@ -60,27 +64,15 @@ const ExerciseSelectionCard: React.FC<ExerciseSelectionCardProps> = ({
           className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
         >
           <option value="">Selecione...</option>
-          <option value="facil">Fácil</option>
           <option value="medio">Médio</option>
-          <option value="dificil">Difícil</option>
         </select>
       </div>
-      <div className="mb-4">
-        <label className="block text-gray-900 dark:text-white mb-2">Quantidade de Perguntas:</label>
-        <input
-          type="number"
-          value={exerciseQuestionCount}
-          placeholder="1, 2, 3 ..."
-          onChange={(e) => setExerciseQuestionCount(parseInt(e.target.value))}
-          className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
-        />
-      </div>
       <button
-        className="block w-full bg-red-500 hover:bg-red-600 focus:bg-red-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform-gpu hover:scale-105 focus:scale-105"
-        onClick={handleStartQuiz}
-      >
-        Iniciar Exercício
-      </button>
+  className="block w-full bg-red-500 hover:bg-red-600 focus:bg-red-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform-gpu hover:scale-105 focus:scale-105"
+  onClick={handleStartQuiz}
+>
+  Iniciar Exercício
+</button>
     </div>
   );
 };
