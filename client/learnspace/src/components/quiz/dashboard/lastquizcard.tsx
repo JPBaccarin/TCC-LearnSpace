@@ -34,7 +34,8 @@ const LastQuizCard: React.FC<LastQuizCardProps> = ({ score, topic, date, correct
           datasets: [{
             label: 'Respostas',
             data: [correctAnswers, wrongAnswers],
-            backgroundColor: ['Blue', 'red'],
+            backgroundColor: ['#3b82f6', '#dc2626'],
+            borderColor: '#FFFFFFF',
             borderWidth: 1
           }]
         },
@@ -54,7 +55,7 @@ const LastQuizCard: React.FC<LastQuizCardProps> = ({ score, topic, date, correct
     <div className="p-4 bg-white dark:bg-gray-700 rounded-md shadow-md">
       <h2 className="text-lg text-white font-semibold">{topic}</h2>
       <p className="text-sm text-gray-500"></p>
-      <canvas ref={chartRef} width="400" height="200"></canvas>
+      <canvas ref={chartRef} width="400" height="200" color='text-white' className='text-white'></canvas>
     </div>
   );
 };

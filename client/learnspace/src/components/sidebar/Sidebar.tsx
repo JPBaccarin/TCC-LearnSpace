@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react';
-import { FaBars, FaRegLightbulb, FaClipboardList, FaPenSquare, FaMicrophoneAlt, FaPen, FaFlask } from 'react-icons/fa';
+import { FaBars, FaHome, FaClipboardList, FaPenSquare, FaMicrophoneAlt, FaPen, FaFlask } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -12,13 +12,12 @@ interface SidebarProps {
 }
 
 const sidebarItems = [
-    { label: 'Learning', href: '/learning', icon: <FaClipboardList className="fill-red-500" /> },
+    { label: 'Artigos', href: '/learning', icon: <FaClipboardList className="fill-red-500" /> },
     { label: 'Quiz', href: '/quiz', icon: <FaPenSquare className="fill-red-500" /> },
-    { label: 'Periodic Table', href: '/periodic-table', icon: <FaFlask className="fill-red-500" /> },
-    { label: 'Speaking', href: '/speaking', icon: <FaMicrophoneAlt className="fill-indigo-500" /> },
-    { label: 'Login', href: '/login', icon: <FaPen className="fill-indigo-500" /> },
-    { label: 'corretor', href: '/essay', icon: <FaPen className="fill-indigo-500" /> },
-    { label: 'Pagina Inicial', href: '/landingpage', icon: <FaPen className="fill-indigo-500" /> },
+    { label: 'Tabela Periódica', href: '/periodic-table', icon: <FaFlask className="fill-red-500" /> },
+    { label: 'IA de Inglês', href: '/speaking', icon: <FaMicrophoneAlt className="fill-red-500" /> },
+    { label: 'Corretor', href: '/', icon: <FaPen className="fill-red-500" /> },
+    { label: 'Página Inicial', href: '/landingpage', icon: <FaHome className="fill-red-500" /> },
 
 
 ];

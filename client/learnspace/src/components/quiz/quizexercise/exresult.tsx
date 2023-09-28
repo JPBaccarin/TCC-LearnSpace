@@ -16,7 +16,7 @@ interface ExerciseResultProps {
   exercises: Exercise[];
 }
 
-const ExerciseResult: React.FC<ExerciseResultProps> = ({ correctCount, totalQuestions, exercises , wrongCount}) => {
+const ExerciseResult: React.FC<ExerciseResultProps> = ({ correctCount, totalQuestions, exercises, wrongCount }) => {
   const renderQuestionList = () => {
     return exercises.map((exercise) => {
       const isCorrect = exercise.selectedOption === exercise.correctAnswer;
@@ -61,10 +61,10 @@ const ExerciseResult: React.FC<ExerciseResultProps> = ({ correctCount, totalQues
       {renderQuestionList()}
       <div className=' p-3'>
         <LastQuizCard score={correctCount} topic="História" date="data_do_quiz" correctAnswers={correctCount} wrongAnswers={wrongCount} />
-         <canvas id="myChart" width="400" height="200"></canvas> {/* Adicione este elemento */}
+        <canvas id="myChart" width="400" height="200"></canvas> {/* Adicione este elemento */}
       </div>
     </>
-    
+
   );
 };
 
