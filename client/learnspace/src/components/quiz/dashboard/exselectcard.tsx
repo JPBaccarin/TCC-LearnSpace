@@ -41,7 +41,7 @@ const ExerciseSelectionCard: React.FC<ExerciseSelectionCardProps> = ({
           router.push(`/quiz/exercise${queryParams}`);
         } else if (id === 2) {
           // Redirecione o usuário para a segunda página com base no ID
-          router.push(`/quiz/exercise${queryParams}`);
+          router.push(`/quiz/History${queryParams}`);
         } else {
           alert('Exercício não encontrado.');
         }

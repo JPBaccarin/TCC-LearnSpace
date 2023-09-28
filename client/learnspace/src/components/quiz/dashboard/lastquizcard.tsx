@@ -1,27 +1,60 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import Chart from 'chart.js/auto';
 
 interface LastQuizCardProps {
   score: number;
   topic: string;
   date: string;
+  correctAnswers: number;
+  wrongAnswers: number;
 }
 
-const LastQuizCard: React.FC<LastQuizCardProps> = ({ score, topic, date }) => {
+const LastQuizCard: React.FC<LastQuizCardProps> = ({ score, topic, date, correctAnswers, wrongAnswers }) => {
+  const chartRef = useRef<HTMLCanvasElement | null>(null);
+  const chartInstance = useRef<Chart | null>(null);
+
+  useEffect(() => {
+    if (chartRef.current) {
+      // Se o gráfico anterior existir, destrua-o
+      if (chartInstance.current) {
+        chartInstance.current.destroy();
+      }
+
+      const ctx = chartRef.current;
+      const chartId = `chart-${Date.now()}`; // Gere um ID único
+
+      // Atribua o ID único ao elemento canvas
+      ctx.id = chartId;
+
+      // Crie um novo gráfico com o ID único
+      chartInstance.current = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Acertos', 'Erros'],
+          datasets: [{
+            label: 'Respostas',
+            data: [correctAnswers, wrongAnswers],
+            backgroundColor: ['Blue', 'red'],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: Math.max(correctAnswers, wrongAnswers) + 1
+            }
+          }
+        }
+      });
+    }
+  }, [correctAnswers, wrongAnswers]);
+
   return (
-    <div className="bg-white p-6 rounded-md shadow-lg dark:bg-gray-700">
-      <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Último Quiz</h2>
-      <div className="mb-4">
-        <p className="text-sm text-gray-900 dark:text-white">Pontuação:</p>
-        <p className="text-xl font-bold text-gray-900 dark:text-white">{score}</p>
-      </div>
-      <div className="mb-4">
-        <p className="text-sm text-gray-900 dark:text-white">Tópico:</p>
-        <p className="text-lg text-gray-900 dark:text-white">{topic}</p>
-      </div>
-      <div>
-        <p className="text-sm text-gray-900 dark:text-white">Data:</p>
-        <p className="text-lg text-gray-900 dark:text-white">{date}</p>
-      </div>
+    <div className="p-4 bg-white dark:bg-gray-700 rounded-md shadow-md">
+      <h2 className="text-lg text-white font-semibold">{topic}</h2>
+      <p className="text-sm text-gray-500"></p>
+      <canvas ref={chartRef} width="400" height="200"></canvas>
     </div>
   );
 };

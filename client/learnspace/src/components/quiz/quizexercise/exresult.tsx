@@ -1,5 +1,6 @@
 import React from 'react';
 import { FiCheck, FiX } from 'react-icons/fi';
+import LastQuizCard from '../dashboard/lastquizcard';
 
 interface Exercise {
   id: number;
@@ -10,11 +11,12 @@ interface Exercise {
 
 interface ExerciseResultProps {
   correctCount: number;
+  wrongCount: number;
   totalQuestions: number;
   exercises: Exercise[];
 }
 
-const ExerciseResult: React.FC<ExerciseResultProps> = ({ correctCount, totalQuestions, exercises }) => {
+const ExerciseResult: React.FC<ExerciseResultProps> = ({ correctCount, totalQuestions, exercises , wrongCount}) => {
   const renderQuestionList = () => {
     return exercises.map((exercise) => {
       const isCorrect = exercise.selectedOption === exercise.correctAnswer;
@@ -57,7 +59,12 @@ const ExerciseResult: React.FC<ExerciseResultProps> = ({ correctCount, totalQues
       </p>
       <h2 className="text-lg font-semibold mt-4 mb-2 dark:text-white">Lista de Questões:</h2>
       {renderQuestionList()}
+      <div className=' p-3'>
+        <LastQuizCard score={correctCount} topic="História" date="data_do_quiz" correctAnswers={correctCount} wrongAnswers={wrongCount} />
+         <canvas id="myChart" width="400" height="200"></canvas> {/* Adicione este elemento */}
+      </div>
     </>
+    
   );
 };
 

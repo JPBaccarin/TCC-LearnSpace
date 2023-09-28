@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import ExerciseOptions from '@/components/quiz/quizexercise/exoptions';
 import ExerciseQuestion from '@/components/quiz/quizexercise/exquestions';
 import ExerciseResult from '@/components/quiz/quizexercise/exresult';
+import LastQuizCard from '@/components/quiz/dashboard/lastquizcard';
 
 interface Exercise {
     id: number;
@@ -89,20 +90,24 @@ const ExercisePage: React.FC = () => {
     const [currentExercise, setCurrentExercise] = useState<number>(0);
     const [exercises, setExercises] = useState<Exercise[]>(questions);
     const [correctCount, setCorrectCount] = useState<number>(0);
+    const [wrongCount, setWrongCount] = useState<number>(0);
     const [quizCompleted, setQuizCompleted] = useState<boolean>(false);
+    
 
     const handleNextExercise = () => {
         const currentExerciseObj = exercises[currentExercise];
         if (currentExerciseObj.selectedOption === currentExerciseObj.correctAnswer) {
-            setCorrectCount(correctCount + 1);
-        }
-
-        if (currentExercise + 1 < exercises.length) {
-            setCurrentExercise(currentExercise + 1);
+          setCorrectCount(correctCount + 1);
         } else {
-            setQuizCompleted(true);
+          setWrongCount(wrongCount + 1);
         }
-    };
+      
+        if (currentExercise + 1 < exercises.length) {
+          setCurrentExercise(currentExercise + 1);
+        } else {
+          setQuizCompleted(true);
+        }
+      };
 
     const handleOptionChange = (option: string) => {
         setExercises((prevExercises) => {
@@ -141,10 +146,13 @@ const ExercisePage: React.FC = () => {
                 ) : (
                     <ExerciseResult
                         correctCount={correctCount}
+                        wrongCount={wrongCount}
                         totalQuestions={exercises.length}
                         exercises={exercises}
                     />
                 )}
+                
+               
             </div>
         </div>
     );
