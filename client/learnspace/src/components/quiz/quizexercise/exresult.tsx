@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FiCheck, FiX } from 'react-icons/fi';
 import LastQuizCard from '../dashboard/lastquizcard';
 
@@ -17,6 +17,14 @@ interface ExerciseResultProps {
 }
 
 const ExerciseResult: React.FC<ExerciseResultProps> = ({ correctCount, totalQuestions, exercises, wrongCount }) => {
+  const [quizActive, setQuizActive] = useState(false);
+
+  const restartQuiz = () => {
+    // Aqui você pode redefinir o estado do quiz para o estado inicial
+    // Por exemplo, limpar respostas selecionadas, redefinir contagens, etc.
+    setQuizActive(true); // Defina como true se desejar reiniciar o quiz
+  };
+
   const renderQuestionList = () => {
     return exercises.map((exercise) => {
       const isCorrect = exercise.selectedOption === exercise.correctAnswer;
@@ -61,10 +69,23 @@ const ExerciseResult: React.FC<ExerciseResultProps> = ({ correctCount, totalQues
       {renderQuestionList()}
       <div className=' p-3'>
         <LastQuizCard score={correctCount} topic="História" date="data_do_quiz" correctAnswers={correctCount} wrongAnswers={wrongCount} />
-        <canvas id="myChart" width="400" height="200"></canvas> {/* Adicione este elemento */}
+        <canvas id="myChart" width="400" height="200"></canvas>
       </div>
+      <a
+        className="block justifiy-center bg-red-500 hover:bg-red-600 focus:bg-red-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform-gpu hover:scale-105 focus:scale-105"
+        href='/quiz'
+      >
+        Voltar
+      </a>
+      
+      {/* Botão para reiniciar o quiz */}
+      <button
+        className="block justifiy-center bg-green-500 hover:bg-green-600 focus:bg-green-600 text-white font-bold py-2 px-4 mt-3 rounded-md transition duration-300 transform-gpu hover:scale-105 focus:scale-105"
+        onClick={restartQuiz}
+      >
+        Reiniciar o Quiz
+      </button>
     </>
-
   );
 };
 

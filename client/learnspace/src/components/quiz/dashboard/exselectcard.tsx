@@ -87,7 +87,7 @@ const ExerciseSelectionCard: React.FC<ExerciseSelectionCardProps> = ({
         </select>
       </div>
       <button
-        className="block w-full bg-red-500 hover:bg-red-600 focus:bg-red-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform-gpu hover:scale-105 focus:scale-105"
+        className="block  bg-red-500 hover:bg-red-600 focus:bg-red-600 text-white font-bold py-2 px-4 mt-3 rounded-md transition duration-300 transform-gpu hover:scale-105 focus:scale-105"
         onClick={handleStartQuiz}
       >
         Iniciar Exercício

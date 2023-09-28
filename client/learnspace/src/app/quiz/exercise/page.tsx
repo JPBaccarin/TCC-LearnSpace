@@ -150,6 +150,7 @@ const ExercisePage: React.FC = () => {
                         totalQuestions={exercises.length}
                         exercises={exercises}
                     />
+                    
                 )}
                 
                
