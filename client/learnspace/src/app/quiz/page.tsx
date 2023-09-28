@@ -37,14 +37,12 @@ const DashboardPage = () => {
                     </div>
 
                     <div className='flex flex-row gap-4 flex-wrap '>
-
-                        <ExerciseSelectionCard
+                         <ExerciseSelectionCard
                             exerciseType={exerciseType}
                             exerciseDifficulty={exerciseDifficulty}
-                            handleExerciseSelection={handleExerciseSelection}                         />
-
-
-                        <LastQuizCard score={0} topic={''} date={''} />
+                            handleExerciseSelection={handleExerciseSelection}
+                        />                   
+                       
                     </div>
                 </div>
             </div>
