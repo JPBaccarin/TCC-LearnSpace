@@ -4,7 +4,7 @@ import config from '../config';
 import fetchBlogs from '../fetch-blogs';
 import ReactMarkdown from 'react-markdown'
 import './index.css'
-
+import { FiArrowLeftCircle } from 'react-icons/fi';
 interface BlogData {
     id: number;
     attributes: {
@@ -172,13 +172,18 @@ const BlogPage = async (props: any) => {
     const blog = blogs.data[0];
 
     return (
-        <div className='bg-gray-900 bgsvg w-full h-full p-4 dark:text-white flex justify-center items-center'>
-            <div className='bg-gray-800 flex flex-col w-2/3 rounded-md p-5 h-fit'>
-                <h2 className='text-center text-4xl font-bold'>{blog.attributes.Title}</h2>
+        <div className='bg-gray-900 bgsvg w-full h-full p-4 dark:text-white flex justify-center items-center mycomponent'>
+
+            <div className='bg-gray-800 flex flex-col sm:w-2/3 rounded-md p-5 h-fit break-words'>
+                <a href="/learning" className='absolute '>
+                    <FiArrowLeftCircle className='w-10 h-10 text-gray-600 hover:text-gray-200  transition-all duration-300' />
+                </a>
+
+                <h1 className='text-center text-4xl mb-0 font-bold'>{blog.attributes.Title}</h1>
                 <div className='px-4 py-2'>
                     <ReactMarkdown>{blog.attributes.Content}</ReactMarkdown>
                 </div>
-                           </div>
+            </div>
         </div>
     )
 }
