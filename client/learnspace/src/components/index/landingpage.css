@@ -1,0 +1,65 @@
+.conteudo h1 {
+    @apply text-2xl font-bold my-4 mb-4 ;
+}
+
+.conteudo h2 {
+    @apply text-xl font-semibold my-4 mb-4 ;
+}
+
+.conteudo h3 {
+    @apply text-lg font-semibold my-4 mb-4 ;
+}
+
+.conteudo h4 {
+    @apply text-base font-semibold my-4 mb-4;
+}
+
+.conteudo h5 {
+    @apply text-sm font-semibold my-4 mb-4;
+}
+
+.conteudo h6 {
+    @apply text-xs font-semibold my-4 mb-4;
+}
+
+/* Estilos para listas não ordenadas (ul) e itens de lista (li) usando Tailwind CSS classes */
+.conteudo ul {
+    @apply list-disc list-inside my-4 mr-2;
+
+}
+
+.conteudo li {
+    @apply ml-8 mt-0 mb-2;
+}
+
+.conteudo img {
+    @apply mx-auto rounded-md my-4;
+}
+
+.conteudo p {
+    @apply text-justify;
+}
+
+.conteudo strong {
+    @apply bg-white/25 border border-white/50 rounded-sm font-bold px-1;
+}
+
+.conteudo u {
+    @apply italic;
+}
+
+.conteudo ::selection {
+    @apply bg-red-400/50
+}
+
+.conteudo blockquote {
+    @apply ml-4 my-4 italic underline decoration-white underline-offset-8 p-4 bg-white/10 border border-white/25 rounded-md w-fit
+}
+
+.conteudo a {
+    @apply text-blue-400 hover:underline
+}
+
+.conteudo ol {
+    @apply list-inside my-4 mr-2
+}

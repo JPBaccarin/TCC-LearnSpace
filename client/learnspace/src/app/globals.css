@@ -222,7 +222,7 @@
   @apply italic;
 }
 
-.chatresponse ::selection {
+::selection {
   @apply bg-red-400/50
 }
 

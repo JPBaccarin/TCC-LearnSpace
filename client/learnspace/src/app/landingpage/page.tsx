@@ -1,17 +1,16 @@
 'use client'
 import FAQSection from "@/components/index/faq";
 import Hero from "@/components/index/hero";
-import Hero3 from "@/components/index/hero/funcionalidades";
-import NavbarLandingPage from "@/components/index/hero/navbar";
+import NavbarLandingPage from "@/components/index/navbarlandingpage/navbarlandingpage";
 import React from "react";
-
+import Funcionalidades from "@/components/index/funcionalidades/funcionalidades";
 
 const page: React.FC = () => {
   return (
     <div className="bg-gray-900 ">
       <NavbarLandingPage />
       <Hero />
-      <Hero3/>
+      <Funcionalidades/>
       <FAQSection />
     </div>
   );

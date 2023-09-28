@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
-import {  redacao, quiz,iaenglish,learning,learnedspace} from './images';   // Substitua FiMenu e FiX pelos ícones desejados
+import {learnspace } from '../imgs/images';   // Substitua FiMenu e FiX pelos ícones desejados
 import Image from 'next/image';
 
 
@@ -15,12 +14,12 @@ const NavbarLandingPage: React.FC = () => {
     return (
         <nav className="backdrop-blur-sm p-4 sticky z-50 top-0 shadow-sm">
             <div className="container mx-auto flex justify-between items-center">
-            <div className='flex flex-row items-center font-bold text-white '>
+                <div className='flex flex-row items-center font-bold text-white '>
                     {/* Use o componente Image para renderizar a imagem */}
-                    <Image className=' h-10 w-10' src={learnedspace} alt='' />
+                    <Image className=' h-10 w-10' src={learnspace} alt='' />
                     <p className=' text-red-600'>Learn</p><br></br>
                     <p>Space</p>
-                    
+
                 </div>
 
                 <div className="hidden md:flex space-x-4">
