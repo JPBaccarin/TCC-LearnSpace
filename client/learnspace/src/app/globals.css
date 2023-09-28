@@ -164,3 +164,80 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 50px;
 }
+
+
+
+/* styles.css */
+
+/* Estilos para tamanhos de cabeçalho usando Tailwind CSS classes */
+
+
+.chatresponse h1 {
+  @apply text-2xl font-bold my-4 mb-4;
+}
+
+.chatresponse h2 {
+  @apply text-xl font-semibold my-4 mb-4;
+}
+
+.chatresponse h3 {
+  @apply text-lg font-semibold my-4 mb-4;
+}
+
+.chatresponse h4 {
+  @apply text-base font-semibold my-4 mb-4;
+}
+
+.chatresponse h5 {
+  @apply text-sm font-semibold my-4 mb-4;
+}
+
+.chatresponse h6 {
+  @apply text-xs font-semibold my-4 mb-4;
+}
+
+/* Estilos para listas não ordenadas (ul) e itens de lista (li) usando Tailwind CSS classes */
+.chatresponse ul {
+  @apply list-disc list-inside my-4 mr-2;
+
+}
+
+.chatresponse li {
+  @apply ml-8 mt-0 mb-2;
+}
+
+.chatresponse img {
+  @apply mx-auto rounded-md my-4;
+}
+
+.chatresponse p {
+  @apply text-justify;
+}
+
+.chatresponse strong {
+  @apply bg-white/25 border border-white/50 rounded-sm font-bold px-1;
+}
+
+.chatresponse u {
+  @apply italic;
+}
+
+.chatresponse ::selection {
+  @apply bg-red-400/50
+}
+
+.chatresponse blockquote {
+  @apply ml-4 my-4 italic underline decoration-white underline-offset-8 p-4 bg-white/10 border border-white/25 rounded-md w-fit
+}
+
+.chatresponse a {
+  @apply text-blue-400 hover:underline
+}
+
+.chatresponse p {
+  @apply my-4 text-justify
+}
+
+.chatresponse ol {
+  @apply list-inside my-4 mr-2
+}

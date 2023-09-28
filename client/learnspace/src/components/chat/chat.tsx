@@ -2,6 +2,7 @@
 
 import IconCopy from '@/icons/IconCopy';
 import { useChat } from 'ai/react'
+import ReactMarkdown from 'react-markdown';
 
 type Props = {}
 
@@ -15,7 +16,7 @@ function chat({ }: Props) {
         textarea.select();
         document.execCommand('copy');
         document.body.removeChild(textarea);
-      };
+    };
 
     return (
 
@@ -46,20 +47,21 @@ function chat({ }: Props) {
                                     <p className='leading-relaxed w-full'>
                                         <div className='flex flex-row justify-between'>
                                             <span className='block font-bold '>{m.role === 'user' ? 'usuário' : 'AI'}</span>
-                                            <div className='group'>
+                                            <div className='group transition-all duration-300'>
                                                 <IconCopy
                                                     className='text-gray-500 cursor-pointer hover:text-gray-200'
                                                     onClick={() => copyText(m.content)}
                                                 />
                                                 <span
-                                                    className="group-hover:visible block invisible bg-gray-800 text-gray-200 text-center p-2 mt-2 absolute text-xs">
+                                                    className="group-hover:visible transition-all duration-300 block invisible bg-gray-800 text-gray-200 text-center p-2 mt-2 absolute text-xs">
                                                     Copiar
                                                 </span>
                                             </div>
                                         </div>
-                                        <div id="content">
-                                            {m.content}
-                                        </div>
+                                        <section id="content" className=''>
+                                            <ReactMarkdown className='chatresponse'>{m.content}</ReactMarkdown>
+
+                                        </section>
                                     </p>
                                 </div>
                             )
@@ -69,7 +71,7 @@ function chat({ }: Props) {
             </div>
             <form onSubmit={handleSubmit} className='w-full flex flex-row items-center p-4 rounded-md bg-gray-800 shadow-lg '>
                 <textarea
-                    className='p-2 shadow-md shadow-red-500/10 border w-full   border-red-500 rounded-lg outline-none focus:out focus:shadow-outline bg-gray-700 '
+                    className='p-2 shadow-md shadow-red-500/10 border w-full text-justify max-h-40  h-20 border-red-500 rounded-lg outline-none focus:out focus:shadow-outline bg-gray-700 caret-red-500 overflow-auto '
                     value={input}
                     onChange={handleInputChange}
                     placeholder='Digite sua mensagem...'

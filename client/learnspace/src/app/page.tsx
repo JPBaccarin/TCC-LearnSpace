@@ -8,7 +8,7 @@ import React from 'react'
 
 function page() {
   return (
-    <div className='p-2 flex items-center justify-center bgsvg bg-gray-900 min-h-screen'>
+    <div className='p-2 flex items-center justify-center h-full bgsvg bg-gray-900 min-h-screen bgsvg text-justify'>
       <Chat />
     </div>
   )

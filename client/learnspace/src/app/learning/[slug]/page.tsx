@@ -180,9 +180,9 @@ const BlogPage = async (props: any) => {
                 </a>
 
                 <h1 className='text-center text-4xl mb-0 font-bold'>{blog.attributes.Title}</h1>
-                <div className='px-4 py-2'>
+                <section className='px-4 py-2'>
                     <ReactMarkdown>{blog.attributes.Content}</ReactMarkdown>
-                </div>
+                </section>
             </div>
         </div>
     )
