@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import minhaImagem1 from './img/images';
+import { minhaImagem1 } from './img/images';
 import Image from 'next/image';
 
 
@@ -81,18 +81,19 @@ const Hero: React.FC = () => {
 
           </motion.p>
 
+          <div>
           <motion.div
-            className="sm:text-5xl text-4xl font-extrabold mb-4"
+            className="sm:text-5xl py-20 text-4xl font-extrabold mb-4"
             whileHover={{ scale: 1.02 }}
           >
-            <h1>Ideias Futuras</h1>
+            <h1>Ideias Futuras</h1>      
+               
           </motion.div>
-          <Image
-            src={minhaImagem1}
-            alt="Imagem 3"
-            width={600}
-            height={400}
-          />
+
+               
+          </div>
+          
+          
         </motion.div>
       </div>
     </section>

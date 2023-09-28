@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import {  redacao, quiz,iaenglish,learning } from './images';
+import { redacao, quiz, iaenglish, learning } from './images';
+import Image from 'next/image';
 
 type NavbarItemProps = {
   title: string;
@@ -12,22 +13,22 @@ const Funcionalidades: React.FC = () => {
   const navbarItems: NavbarItemProps[] = [
     {
       title: "IA english",
-      description: "Essa funcionalida é feita para treinar, o aluno com sua comunicação em ingles com outras pessoas,ou lhe dar dicas sobre sua pronuncia, tudo sem acompanha por uma IA.",
+      description: "Essa funcionalidade foi projetada para aprimorar as habilidades de comunicação em inglês do aluno, seja na interação com outras pessoas ou na melhoria da pronúncia, tudo isso com o suporte de uma IA.Essa funcionalidade permite aos alunos aprimorar suas habilidades de inglês de várias maneiras, tornando o aprendizado mais interativo e eficaz.",
       image: quiz,
     },
     {
       title: "Corretor IA",
-      description: "Essa funcionalidade tem como principal objetivo corrigir redações, mostrando seus erros,e melhoramentos na sua escrita,tudo por uma IA",
-      image: {redacao},
+      description: "O Corretor IA é uma funcionalidade dedicada a aprimorar a qualidade da sua escrita, fornecendo correções e sugestões de melhoria em suas redações, tudo isso através de uma IA sofisticada.Essa funcionalidade proporciona uma maneira eficaz e conveniente de aprimorar suas habilidades de escrita, garantindo que suas redações estejam livres de erros e sejam mais impactantes.",
+      image: redacao,
     },
     {
       title: "Quiz",
-      description: "Essa funcionalidade traria varias questões sobre o que o aluno ou internauta teria estudado.",
+      description: "Essa funcionalidade suscita diversas perguntas acerca dos temas que o aluno ou internauta pode ter explorado em seu estudo no site de ensino,essa funcionalidade  tambem permite que os usuários tenham uma visão mais clara dos temas e tópicos que estão disponíveis para estudo no site de ensino.",
       image: iaenglish,
     },
     {
       title: "Learning",
-      description: "Essa funcionalida tras varios conteudos sobre materias escolares e diversas, para o aprendizado.",
+      description: "O recurso de Learning oferece uma ampla gama de conteúdos educacionais que abrangem matérias escolares e diversos campos de conhecimento, tornando o aprendizado acessível e envolvente. Este sistema é suportado por um CMS de última geração, que facilita a criação, gestão e entrega de conteúdo educacional de alta qualidade. Alguns destaques incluem: Tecnologia CMS Avançada , Diversidade de Matérias e etc",
       image: learning,
     },
   ];
@@ -68,14 +69,11 @@ const Funcionalidades: React.FC = () => {
                 </motion.div>
               </div>
               <div className="w-1/3">
-                <motion.img
+                <Image
                   src={selectedItem.image}
                   alt={selectedItem.title}
-                  className="max-w-full rounded-md max-h-[500px]"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  whileHover={{ scale: 1.1 }}
-                  exit={{ opacity: 0 }}
+                  width={300} // Defina a largura desejada
+                  height={300} // Defina a altura desejada
                 />
               </div>
             </div>

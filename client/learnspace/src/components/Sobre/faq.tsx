@@ -1,27 +1,31 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-
- 
+import { minhaImagem2 } from './img/images';
 
 interface FAQItem {
     question: string;
     answer: string;
+    imagem: any;
 }
+
 
 const FAQSection: React.FC = () => {
     const faqData: FAQItem[] = [
         {
-            question: 'Vocês pretendem melhorar ainda mais?',
-            answer: 'Claro meu caro internauta estamos sempre em constante aperfeiçoamento.',
+            question: 'Quiz com questões do enem',
+            answer: 'Nossa plataforma oferecerá a prática de questões do Enem como uma valiosa ferramenta de preparação para o vestibular. Você tem a liberdade de escolher a matéria que deseja estudar, garantindo uma preparação personalizada e eficaz.',
+            imagem: minhaImagem2,
         },
         {
-            question: 'Voces pretende deixar essa belezura , paga?',
-            answer: 'Prentedemos deixar nosso serviço um pouco dos dois, deixando tanto livre para o internauta experimentar, quanto paga para ele usufruir mais do nosso serviço.',
+            question: 'Comunicação Aprimorada entre Alunos e Professores',
+            answer: 'No futuro, nossa plataforma contará com um chat integrado que facilitará a comunicação entre alunos e professores. Isso permitirá a discussão de dúvidas tanto nas matérias quanto em questões de vestibulares, proporcionando uma experiência de aprendizado mais colaborativa e eficaz.',
+            imagem: minhaImagem2,
         },
         {
-            question: 'Quanto seria essa quantia?',
-            answer: 'pretendemos deixar com duas assinaturas , uma de 30 para o assinante usufruir  das maiorias das aplicações , e 40 para a experiencia total do usuario',
+            question: 'Recursos Avançados de Anotação e Criação de Mapas Mentais',
+            answer: 'No futuro, nossa plataforma apresentará um sistema integrado que permitirá aos alunos fazer anotações em artigos de estudo e até mesmo criar mapas mentais para visualizar e aprimorar seu entendimento do conteúdo estudado. Essas ferramentas avançadas de organização e revisão garantirão uma experiência de aprendizado mais eficiente e produtiva.',
+            imagem: minhaImagem2,
         },
     ];
 
@@ -33,8 +37,7 @@ const FAQSection: React.FC = () => {
 
     return (
         <section className="bg-gray-900 text-white py-16">
-            <div className="container mx-auto text-center">
-                <h2 className="text-3xl font-semibold mb-6">Perguntas Frequentes</h2>
+            <div className="container mx-auto text-center">                
                 <div className="grid grid-cols-1 gap-4">
                     {faqData.map((faq, index) => (
                         <div

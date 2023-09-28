@@ -1,7 +1,9 @@
 
-
 import React, { useState } from 'react';
-import { FiMenu, FiX } from 'react-icons/fi'; // Substitua FiMenu e FiX pelos ícones desejados
+import { FiMenu, FiX } from 'react-icons/fi';
+import {  redacao, quiz,iaenglish,learning,learnedspace} from './images';   // Substitua FiMenu e FiX pelos ícones desejados
+import Image from 'next/image';
+
 
 const NavbarLandingPage: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -13,12 +15,18 @@ const NavbarLandingPage: React.FC = () => {
     return (
         <nav className="backdrop-blur-sm p-4 sticky z-50 top-0 shadow-sm">
             <div className="container mx-auto flex justify-between items-center">
-                <div className="text-white font-bold text-xl">Seu logo</div>
+            <div className='flex flex-row items-center font-bold text-white '>
+                    {/* Use o componente Image para renderizar a imagem */}
+                    <Image className=' h-10 w-10' src={learnedspace} alt='' />
+                    <p className=' text-red-600'>Learn</p><br></br>
+                    <p>Space</p>
+                    
+                </div>
 
                 <div className="hidden md:flex space-x-4">
                     <a href="../landingpage" className="text-white hover:text-gray-300">Página Inicial</a>
                     <a href="landingpage/Sobre" className="text-white hover:text-gray-300">Sobre Nós</a>
-                    <a href="../Contato" className="text-white hover:text-gray-300">Contato</a>
+                    <a href="landingpage/Contato" className="text-white hover:text-gray-300">Contato</a>
                 </div>
 
                 <div className="md:hidden flex items-center">
