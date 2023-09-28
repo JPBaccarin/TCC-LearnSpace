@@ -10,6 +10,20 @@ interface CardpostProps {
 }
 
 const Cardpost: React.FC<CardpostProps> = ({ title, summary, linkUrl, imageUrl, category }) => {
+    const categoryColors: { [key: string]: string } = {
+        'História': 'bg-red-500', // Substitua 'Categoria1' pela categoria desejada e 'bg-red-500' pela cor desejada
+        'Química': 'bg-teal-500', // Adicione mais categorias e cores conforme necessário
+        'Geografia': 'bg-yellow-500',
+        'Física': 'bg-indigo-500',
+
+        'Programação - Iniciante': 'bg-blue-500',
+
+        // ...
+    };
+
+    // Use a categoria para obter a cor correspondente
+    const categoryColor = categoryColors[category] || 'bg-gray-500'; // Cor padrão se a categoria não for encontrada
+
     return (
         <motion.div
             className="bg-gray-700 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 justify-around shadow-md text-white rounded-lg relative m-2"
@@ -28,7 +42,7 @@ const Cardpost: React.FC<CardpostProps> = ({ title, summary, linkUrl, imageUrl, 
             ></div>
 
             <div className="absolute top-0 left-0 m-2">
-                <div className="bg-red-500 rounded-md text-sm p-1">{category}</div>
+                <div className={`text-sm p-1 rounded-md ${categoryColor}`}>{category}</div>
             </div>
 
             <div className="bg-black h-48 p-4 text-sm rounded-b-md">

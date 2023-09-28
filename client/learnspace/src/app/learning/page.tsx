@@ -49,6 +49,7 @@ interface BlogData {
                             size: number;
                             url: string;
                         };
+                       
                         // Adicione outros tamanhos de imagem, se necessário
                     };
                     hash: string;
@@ -104,7 +105,7 @@ export default function Page() {
                                 title={blog.attributes.Title}
                                 summary={blog.attributes.Summary}
                                 linkUrl={`learning/${blog.attributes.Slug}`}
-                                imageUrl={`${config.api}${blog.attributes.Thumbnail.data.attributes.formats.thumbnail.url}`}
+                                imageUrl={`${config.api}${blog.attributes.Thumbnail.data.attributes.formats.small.url}`}
                                 category={blog.attributes.Category}
                             />
                         ))
