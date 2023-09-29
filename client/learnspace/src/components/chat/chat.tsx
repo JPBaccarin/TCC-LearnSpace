@@ -2,11 +2,12 @@
 
 import IconCopy from '@/icons/IconCopy';
 import { useChat } from 'ai/react'
+import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
-
+import placeholder from './400.svg';
 type Props = {}
 
-function chat({ }: Props) {
+function Chat({ }: Props) {
     const { messages, input, handleInputChange, handleSubmit, } = useChat()
 
     const copyText = (text: string) => {
@@ -37,11 +38,11 @@ function chat({ }: Props) {
                                 <div key={m.id} className='flex flex-row my-2 p-4 rounded-md bg-gray-900/50 '>
                                     <div className='h-12 w-12 mr-2' >
                                         {m.role === 'user' && (
-                                            <img src="https://placehold.co/400" alt="" className='rounded-full' />
+                                            <Image src={placeholder} width="32" height="32" alt="" className='rounded-full' />
                                         )}
 
                                         {m.role === 'assistant' && (
-                                            <img src="favicon.ico" alt="" className='rounded-full' />
+                                            <Image src="/favicon.ico" width="32" height="32" alt="" className='rounded-full' />
                                         )}
                                     </div>
                                     <p className='leading-relaxed w-full'>
@@ -71,7 +72,7 @@ function chat({ }: Props) {
             </div>
             <form onSubmit={handleSubmit} className='w-full flex flex-row items-center p-4 rounded-md bg-gray-800 shadow-lg '>
                 <textarea
-                    className='p-2 shadow-md shadow-red-500/10 border w-full text-justify max-h-40  h-20 border-red-500 rounded-lg outline-none focus:out focus:shadow-outline bg-gray-700 caret-red-500 overflow-auto '
+                    className='p-2 shadow-md shadow-red-500/10 border w-full text-justify max-h-40  h-20 border-red-500 rounded-lg outline-none focus:out focus:shadow-outline bg-gray-700  overflow-auto '
                     value={input}
                     onChange={handleInputChange}
                     placeholder='Digite sua mensagem...'
@@ -82,4 +83,4 @@ function chat({ }: Props) {
     )
 }
 
-export default chat
+export default Chat

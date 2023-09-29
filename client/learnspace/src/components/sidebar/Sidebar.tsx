@@ -4,9 +4,9 @@ import { FaBars, FaHome, FaClipboardList, FaPenSquare, FaMicrophoneAlt, FaPen, F
 import { AiOutlineClose } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-
+import Image from 'next/image';
+import placeholder from './400.svg'
 interface SidebarProps {
     // Se você tiver alguma prop específica, pode adicioná-la aqui.
 }
@@ -71,9 +71,10 @@ const Sidebar: React.FC<SidebarProps> = () => {
                     <AiOutlineClose className='dark:fill-white' size={18} />
                 </button>
                 <div className="flex flex-col items-center h-full mt-4 py-8">
-                    <img
-                        src="https://via.placeholder.com/150"
+                    <Image
+                        src={placeholder}
                         alt="Foto do Usuário"
+
                         className="w-24 h-24 rounded-full mb-4"
                     />
                     <h1 className="text-lg font-semibold">Usuário</h1>

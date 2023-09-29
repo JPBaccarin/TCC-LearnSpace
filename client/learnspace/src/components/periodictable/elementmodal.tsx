@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import React from 'react';
 interface Element {
     name: string;
@@ -39,7 +40,7 @@ const ElementModal: React.FC<ElementModalProps> = ({ element, onClose }) => {
                     </div>
                     <p className="text-sm py-2">{element.summary}</p>
                     <div className="flex flex-col items-center gap-2">
-                        <img className="rounded-md w-2/3 m-3" src={element.image.url} alt={element.image.title} />
+                        <Image className="rounded-md w-2/3 m-3" src={element.image.url} alt={element.image.title} />
                     </div>
                     <div>
                         <h1 className="text-lg font-bold my-2 border-b border-white/5 w-fit">Configuração Eletrônica:</h1>

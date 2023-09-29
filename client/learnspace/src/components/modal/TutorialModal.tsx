@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 interface Step {
   title: string;
@@ -51,7 +52,7 @@ const TutorialModal: React.FC<TutorialModalProps> = ({ isOpen, steps, onClose })
             exit={{ scale: 0.5, opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <img
+            <Image
               src={steps[currentStep].imageSrc}
               alt={steps[currentStep].title}
               className="w-40 mx-auto mb-4"
