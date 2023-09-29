@@ -46,7 +46,7 @@ const Funcionalidades: React.FC = () => {
 
     return (
         <div className="flex flex-col items-center bg-gray-900 text-white sm:m-0 mx-2 text-sm sm:text-base">
-            <h1 className='text-4xl font-bold my-4'>Principais funcionalidades</h1>
+            <h1 className='text-4xl font-bold my-4'>Principais Funcionalidades</h1>
             <div className="flex">
                 {navbarItems.map((item) => (
                     <button
@@ -78,7 +78,7 @@ const Funcionalidades: React.FC = () => {
                                 </motion.div>
                             </div>
                             <div className="w-1/3">
-                                <Image
+                                <Image className='rounded-md'
                                     src={selectedItem.image}
                                     alt={selectedItem.title}
                                     width={300} // Defina a largura desejada
