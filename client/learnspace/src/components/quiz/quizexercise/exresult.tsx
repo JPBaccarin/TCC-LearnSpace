@@ -43,7 +43,7 @@ const ExerciseResult: React.FC<ExerciseResultProps> = ({ correctCount, totalQues
         <div key={exercise.id} className="mb-4 ">
           <div className="flex items-center ">
             {icon}
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+            <h3 className="text-md mb-2 font-semibold text-gray-900 dark:text-white">
               {exercise.question}
             </h3>
           </div>
@@ -69,22 +69,23 @@ const ExerciseResult: React.FC<ExerciseResultProps> = ({ correctCount, totalQues
       {renderQuestionList()}
       <div className=' p-3'>
         <LastQuizCard score={correctCount} topic="História" date="data_do_quiz" correctAnswers={correctCount} wrongAnswers={wrongCount} />
-        <canvas id="myChart" width="400" height="200"></canvas>
       </div>
-      <a
-        className="block justifiy-center bg-red-500 hover:bg-red-600 focus:bg-red-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform-gpu hover:scale-105 focus:scale-105"
-        href='/quiz'
-      >
-        Voltar
-      </a>
-      
-      {/* Botão para reiniciar o quiz */}
-      <button
-        className="block justifiy-center bg-green-500 hover:bg-green-600 focus:bg-green-600 text-white font-bold py-2 px-4 mt-3 rounded-md transition duration-300 transform-gpu hover:scale-105 focus:scale-105"
-        onClick={restartQuiz}
-      >
-        Reiniciar o Quiz
-      </button>
+      <div className='flex flex-row gap-3 justify-center '>
+        <a
+          className=" p-2  bg-red-500 hover:bg-red-600 focus:bg-red-600 text-white font-bold rounded-md transition duration-300  hover:scale-105 focus:scale-105"
+          href='/quiz'
+        >
+          Voltar
+        </a>
+
+        {/* Botão para reiniciar o quiz */}
+        <button
+          className=" p-2  bg-green-500 hover:bg-green-600 focus:bg-green-600 text-white font-bold  rounded-md transition duration-300  hover:scale-105 focus:scale-105"
+          onClick={restartQuiz}
+        >
+          Reiniciar o Quiz
+        </button>
+      </div>
     </>
   );
 };

@@ -13,12 +13,10 @@ const page: React.FC = () => {
       <NavbarLandingPage />
       <Hero />
       <div className="flex flex-col gap-10">
-
         <Porque />
         <Funcionalidades />
         <FuncionalidadesFuturas />
         <FAQSection />
-
       </div>
     </div>
   );

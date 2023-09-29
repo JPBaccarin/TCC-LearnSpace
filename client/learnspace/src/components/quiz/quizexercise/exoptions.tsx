@@ -8,7 +8,7 @@ interface ExerciseOptionsProps {
 
 const ExerciseOptions: React.FC<ExerciseOptionsProps> = ({ options, selectedOption, handleOptionChange }) => {
   return (
-    <div className="grid grid-cols-2 gap-4 mt-4">
+    <div className="grid grid-cols-2 gap-4 mt-4 text-center">
       {options.map((option, index) => (
         <div
           key={index}
