@@ -20,8 +20,8 @@ const imagesd: React.FC = () => {
 
 const page: React.FC = () => {
   return (
-    <div className="pl-56 min-h-screen flex items-center justify-center bg-gray-900 ">  
-      <div className=" pl-16 flex items-center">
+    <div className="pl-56 min-h-screen flex items-center justify-center bg-gray-900 heropattern-bubbles-red-500/50 ">  
+      <div className=" pl-16 flex items-center ">
       
         <div className=" pl-96"> {/* Espaço à direita da imagem */}
           <Image className=" absolute inset-y-48 left-16 " src={loginrobot} alt="Login Robot" width={300} height={300} />
