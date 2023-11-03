@@ -7,10 +7,10 @@ import { usePathname } from 'next/navigation'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
+/*export const metadata: Metadata = {
   title: 'LearnSpace',
   description: 'LearnSpace - Plataforma de Estudos com IA',
-}
+}*/
 
 export default function RootLayout({
   children,

@@ -32,7 +32,7 @@ const DashboardPage = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-red-300 dark:bg-gray-900 p-4 heropattern-wiggle-white/10">
+        <div className="min-h-screen flex items-center justify-center bg-red-300 dark:bg-gray-900 p-4 heropattern-wiggle-white/10 hero">
             <motion.div
                 className="max-w-full w-11/12 md:w-2/3 mx-auto p-2 sm:p-8 bg-stone-100 dark:bg-gray-700/20 rounded-3xl shadow-2xl gap-4 backdrop-blur-sm"
                 initial={{ opacity: 0, scale: 0.8, y: -20 }}
