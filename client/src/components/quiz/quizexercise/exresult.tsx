@@ -59,7 +59,7 @@ const ExerciseResult: React.FC<ExerciseResultProps> = ({ correctCount, totalQues
 
   return (
     <>
-      <h1 className="text-3xl font-extrabold text-center text-gray-900 dark:text-white mb-4">
+      <h1 className="text-3xl font-extrabold text-center  text-gray-900 dark:text-white mb-4">
         Quiz Finalizado!
       </h1>
       <p className="text-gray-900 dark:text-white">

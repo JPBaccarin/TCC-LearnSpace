@@ -11,7 +11,7 @@ interface WeeklyGoalCardProps {
 
 const WeeklyGoalCard: React.FC<WeeklyGoalCardProps> = ({ completedExercises, weeklyGoal, accuracyRate }) => {
   const progress = (completedExercises / weeklyGoal) * 100;
-  const accuracyProgress = accuracyRate;
+  const accuracyProgress = (24 / 30) * 100;
 
   return (
     <div className="bg-white p-6 md:rounded-3xl rounded-lg shadow-lg dark:bg-gray-700 w-full h-full">
@@ -51,7 +51,7 @@ const WeeklyGoalCard: React.FC<WeeklyGoalCardProps> = ({ completedExercises, wee
           </div>
           <div className="w-full md:w-1/2">
             <CircularProgressbarWithChildren
-              value={accuracyRate}
+              value={accuracyProgress}
               circleRatio={0.75}
               styles={buildStyles({
                 pathColor: "#3b82f6",
@@ -63,7 +63,7 @@ const WeeklyGoalCard: React.FC<WeeklyGoalCardProps> = ({ completedExercises, wee
               strokeWidth={8.5}
             >
               <p className="sm:text-xl text-2xl text-gray-900 dark:text-white font-bold mb-4">
-                {accuracyRate}
+                {accuracyProgress}
               </p>
               <p className="text-md  text-gray-900 dark:text-white">
                 Taxa de Acertos

@@ -37,6 +37,7 @@ const LastQuizCard: React.FC<LastQuizCardProps> = ({ score, topic, date, correct
             backgroundColor: ['#3b82f6', '#dc2626'],
             borderColor: '#FFFFFFF',
             borderWidth: 1
+            
           }]
         },
         options: {

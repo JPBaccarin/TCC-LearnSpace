@@ -31,7 +31,7 @@ const ExerciseSelectionCard: React.FC<ExerciseSelectionCardProps> = ({
     // Create the query string for the exercise parameters
     const queryParams = `?exerciseType=${exerciseType}&exerciseDifficulty=${exerciseDifficulty}`;
 
-    if (exerciseType && exerciseDifficulty && questionQuantity) {
+    if (exerciseType && exerciseDifficulty) {
       const selectedExercise = exerciseOptions.find(
         (exercise) => exercise.type === exerciseType
       );
@@ -41,7 +41,7 @@ const ExerciseSelectionCard: React.FC<ExerciseSelectionCardProps> = ({
 
         if (id === 1) {
           // Redirecione o usuário para a primeira página com base no ID
-          router.push(`/quiz/exercise${queryParams}`);
+          router.push(`/quiz/matbasico${queryParams}`);
         } else if (id === 2) {
           // Redirecione o usuário para a segunda página com base no ID
           router.push(`/quiz/History${queryParams}`);
@@ -51,8 +51,6 @@ const ExerciseSelectionCard: React.FC<ExerciseSelectionCardProps> = ({
       } else {
         alert('Exercício não encontrado.');
       }
-    } else {
-      alert('Por favor, selecione todas as opções e insira a quantidade de questões antes de iniciar o quiz.');
     }
   };
 
@@ -99,20 +97,10 @@ const ExerciseSelectionCard: React.FC<ExerciseSelectionCardProps> = ({
           </div>
         </div>
         <div className="flex flex-col md:flex-row">
-          <div className="w-full md:w-1/2 mb-4 md:mb-0 md:mr-4">
-            <label className="block text-gray-900 dark:text-white mb-2">
-              Quantidade de Questões:
-            </label>
-            <input
-              type="number"
-              value={questionQuantity}
-              onChange={(e) => setQuestionQuantity(e.target.value)}
-              className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 dark:border-gray-600 hover:border-red-500/50 transition dark:bg-gray-700 dark:text-white"
-            />
-          </div>
-          <div className="w-full md:w-1/2">
+
+          <div className="w-full ">
             <button
-              className="mt-4 md:mt-8 bg-red-500 hover:bg-red-600 focus:bg-red-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform-gpu hover:scale-105 focus:scale-105 w-full"
+              className="mt-4 md:mt-8 w-full bg-red-500 hover:bg-red-600 focus:bg-red-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 transform-gpu hover:scale-105 focus:scale-105 "
               onClick={handleStartQuiz}
             >
               Iniciar Exercício
