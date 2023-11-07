@@ -12,7 +12,7 @@ interface SidebarProps {
 }
 
 const sidebarItems = [
-    { label: 'Artigos', href: '/learning', icon: <FaClipboardList className="fill-red-500" /> },
+    { label: 'Artigos', href: '/artigos', icon: <FaClipboardList className="fill-red-500" /> },
     { label: 'Quiz', href: '/quiz', icon: <FaPenSquare className="fill-red-500" /> },
     { label: 'Tabela Periódica', href: '/periodic-table', icon: <FaFlask className="fill-red-500" /> },
     { label: 'IA de Inglês', href: '/speaking', icon: <FaMicrophoneAlt className="fill-red-500" /> },

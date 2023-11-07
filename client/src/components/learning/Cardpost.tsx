@@ -26,11 +26,12 @@ const Cardpost: React.FC<CardpostProps> = ({ title, summary, linkUrl, imageUrl, 
 
     return (
         <motion.div
-            className="bg-gray-700 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 justify-around shadow-md text-white rounded-lg relative m-2"
+            className="bg-gray-700 justify-around shadow-md text-white rounded-lg relative m-2"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
             whileHover={{ scale: 1.02 }}
+            
         >
             <div
                 className="h-40 rounded-t-lg"

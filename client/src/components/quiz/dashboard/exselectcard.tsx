@@ -24,7 +24,9 @@ const ExerciseSelectionCard: React.FC<ExerciseSelectionCardProps> = ({
 
   const exerciseOptions = [
     { id: 1, type: 'Matemática', exerciseDifficulty: 'Médio' },
-    { id: 2, type: 'História', exerciseDifficulty: 'Médio' },
+    { id: 2, type: 'História', exerciseDifficulty: 'Fácil' },
+    { id: 3, type: 'Ciências', exerciseDifficulty: 'Médio' },
+
   ];
 
   const handleStartQuiz = () => {
@@ -45,6 +47,9 @@ const ExerciseSelectionCard: React.FC<ExerciseSelectionCardProps> = ({
         } else if (id === 2) {
           // Redirecione o usuário para a segunda página com base no ID
           router.push(`/quiz/History${queryParams}`);
+        } else if (id === 3) {
+          // Redirecione o usuário para a segunda página com base no ID
+          router.push(`/quiz/ciencias${queryParams}`);
         } else {
           alert('Exercício não encontrado.');
         }

@@ -2,16 +2,15 @@ import React from 'react';
 import { CircularProgressbar, CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import { FaDumbbell, FaChartLine, FaBullseye } from 'react-icons/fa';
 
-
 interface WeeklyGoalCardProps {
   completedExercises: number;
   weeklyGoal: number;
-  accuracyRate: number;
+  accuracyRate?: number; // Make accuracyRate an optional prop
 }
 
-const WeeklyGoalCard: React.FC<WeeklyGoalCardProps> = ({ completedExercises, weeklyGoal, accuracyRate }) => {
+const WeeklyGoalCard: React.FC<WeeklyGoalCardProps> = ({ completedExercises, weeklyGoal, accuracyRate = 24 }) => {
   const progress = (completedExercises / weeklyGoal) * 100;
-  const accuracyProgress = (24 / 30) * 100;
+  const accuracyProgress = (accuracyRate / 30) * 100; // Use accuracyRate for the accuracyProgress
 
   return (
     <div className="bg-white p-6 md:rounded-3xl rounded-lg shadow-lg dark:bg-gray-700 w-full h-full">
@@ -63,7 +62,7 @@ const WeeklyGoalCard: React.FC<WeeklyGoalCardProps> = ({ completedExercises, wee
               strokeWidth={8.5}
             >
               <p className="sm:text-xl text-2xl text-gray-900 dark:text-white font-bold mb-4">
-                {accuracyProgress}
+                {accuracyProgress}%
               </p>
               <p className="text-md  text-gray-900 dark:text-white">
                 Taxa de Acertos
