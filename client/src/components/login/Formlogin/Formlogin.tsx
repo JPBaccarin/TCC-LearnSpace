@@ -14,7 +14,8 @@ const FormLogin: React.FC<LoginFormProps> = ({ onLogin }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 flex flex-col">
+    <div className='flex justify-center'>
+    <form onSubmit={handleSubmit} className="bg-transparent space-y-4 flex flex-col  rounded-full py-2 px-4">
       <div>
         <label htmlFor="email" className="block font-medium mb-1 text-red-500">
           Email
@@ -50,6 +51,7 @@ const FormLogin: React.FC<LoginFormProps> = ({ onLogin }) => {
       <a href="login/register" className=' text-red-400 hover:underline text-center m-2 '> não possui uma conta?</a>
 
     </form>
+    </div>
   );
 };
 
